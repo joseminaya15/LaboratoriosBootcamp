@@ -1,0 +1,75 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: 'RobotoRegular';
+}
+.logo{
+	max-width: 200px;
+}
+.fondo-imagen{
+	background: url(../img/fondo-home.jpg) no-repeat center center;
+	background-size: cover !important;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 0;
+}
+.fondo-imagen:BEFORE{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #000000;
+	opacity: .4;
+	z-index: 1;
+}
+.card-login{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.mdl-card-login{
+	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	background-color: rgba(0, 0, 0, 0.4);
+	width: 100%;
+    max-width: 900px;
+    display: inline-block;
+}
+.mdl-card-login .mdl-card__title{
+	background-color: transparent;
+	width: 100%;
+	max-width: calc(100% - 360px);
+	float: left;
+	display: inline-block;
+	padding: 30px;
+}
+.mdl-card-login .mdl-card__title h2{
+	color: #FFFFFF;
+	margin: 0;
+	font-family: 'RobotoBold';
+}
+.mdl-card-login .mdl-card__title p{
+	color: #FFFFFF;
+	margin: 20px 0;
+	font-size: 24px;
+	font-family: 'RobotoLight';
+}
+.mdl-card-login .mdl-card__supporting-text{
+	background-color: #FFFFFF;
+	width: 100%;
+    max-width: 360px;
+    float: right;
+    padding: 30px;
+}
+
+.mdl-input .mdl-textfield{
+	width: 100%;
+}
