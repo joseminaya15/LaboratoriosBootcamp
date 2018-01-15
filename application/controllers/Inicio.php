@@ -18,12 +18,18 @@ class Inicio extends CI_Controller {
 		$datos = $this->M_eventos->getDatosEventos();
 		$data['nombres'] = _getSesion('Nombres');
 		$data['fecha'] = $datos[0]->fecha;
-		$html_datos = $this->htmlDatos();
+		$existe = $this->M_eventos->verificarInscritos(_getSesion('Id'));
+		if($existe == null) {
+			$html_datos = $this->htmlDatos('');
+		}else {
+			_log('entra');
+			$html_datos = $this->htmlDatos('disabled');
+		}	
 		$data['html'] = $html_datos;
 		$this->load->view('v_index', $data);
 	}
 
-	function htmlDatos() {
+	function htmlDatos($dato) {
 		$datos = $this->M_eventos->getDatosEventos();
 		$html = null;
 		$count = 0;
@@ -37,7 +43,7 @@ class Inicio extends CI_Controller {
 		            			<h4>'.$datos[$count]->event_name.'</h4>
 		            		</div>
 		            		<div class="col-xs-12 boton">
-		            			<button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="btnInscr'.$count.'" onclick="inscribir('.$count.', 25);">Inscribir</button>
+		            			<button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="btnInscr'.$count.'" onclick="inscribir('.$count.', 25, this);" '.$dato.'>Inscribir</button>
 		            		</div>
 		            	</div>
 		            </div>';
@@ -50,8 +56,13 @@ class Inicio extends CI_Controller {
 		$data['error'] = EXIT_ERROR;
         $data['msj']   = null;
         try {
+        	$vacantes = _post('vacantes');
+        	$evento   = _post('evento');
+        	$id_evento = $this->M_eventos->getDatosIdEventos($evento);
+        	$updt = array('vacantes' => $vacantes);
+        	$updt_datos = $this->M_eventos->updateDatos($updt, $id_evento, 'eventos');
         	$arrayInsert = array('id_evento' => $id_evento,
-        						 'id_pers' => _getSesion('Id') );
+        						 'id_pers'   => _getSesion('Id') );
         	$this->M_eventos->insertarDatos($arrayInsert, 'inscritos');
         	$data['error'] = EXIT_SUCCESS;
         }catch(Exception $e) {
@@ -59,4 +70,6 @@ class Inicio extends CI_Controller {
         }
         echo json_encode($data);
 	}
+
+
 }

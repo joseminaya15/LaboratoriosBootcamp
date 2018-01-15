@@ -34,7 +34,8 @@ function validateEmail(email) {
 }
 
 var cont = 0;
-function inscribir(num, vacant) {
+function inscribir(num, vacant, dato) {
+	var evento = $(dato).parent().parent().find('.nombre').find('h4').text();
 	var i = $('#vacantes'+num).text();
 	if(cont == 1) {
 		return;
@@ -45,14 +46,26 @@ function inscribir(num, vacant) {
 		return;
 	}
 	$('#vacantes'+num).text(i);
-	$( ".cards .col-xs-3" ).each(function() {
-		if($(this).attr('id') != 'card'+num) {
-			$( this ).css( "background", "#E0E0E0" );
-			$(this).children().find('.boton').children().attr('id');
-			var boton = $(this).children().find('.boton').children().attr('id');
-			$('#'+boton).prop( "disabled", true );
-			var texto = $(this).children().find('.nombre').find('h4').text()
-			console.log(texto);
-		}
+	$.ajax({
+		data  : { vacantes : i,
+				  evento : evento},
+		url   : 'Inicio/inscribir',
+		type  : 'POST'
+	}).done(function(data){
+		try{
+        	data = JSON.parse(data);
+        	if(data.error == 0){
+        		$( ".cards .col-xs-3" ).each(function() {
+				$( this ).css( "background", "#E0E0E0" );
+				$(this).children().find('.boton').children().attr('id');
+				var boton = $(this).children().find('.boton').children().attr('id');
+				$('#'+boton).prop( "disabled", true );
+			});
+        	}else {
+        		return;
+        	}
+      } catch (err){
+        msj('error',err.message);
+      }
 	});
 }
