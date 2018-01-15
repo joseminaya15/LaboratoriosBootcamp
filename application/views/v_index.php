@@ -35,7 +35,15 @@
             <h2 style="color: #fff;"><?php echo $fecha ?></h2>
             <div class="col-xs-12 cards">
             	<?php echo $html ?>
-            </div>            
+            </div> 
+            <h2 style="color: #fff;">2018-01-16</h2>
+            <div class="col-xs-12 cards2">
+            	<?php echo $html ?>
+            </div>   
+            <h2 style="color: #fff;">2018-01-17</h2>
+            <div class="col-xs-12 cards2">
+            	<?php echo $html ?>
+            </div>       
         </div>
     </section>
 	<script src="<?php echo RUTA_JS?>jquery-3.2.1.min.js?v=<?php echo time();?>"></script>
