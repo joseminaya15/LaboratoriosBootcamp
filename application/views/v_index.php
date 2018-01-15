@@ -28,13 +28,13 @@
 <body>
     <section id="principal">
         <div class="fondo-imagen"></div>
-        <div class="container text-center">
+        <div class="container text-center relative">
             <h2>Bienvenido al evento Leonardo</h2>
             <div class="mdl-calendario">
                 <h2 style="color: #fff;">2018-01-16</h2>
                 <div class="mdl-card mdl-card-fecha">
                     <div class="mdl-card__title">
-                       <span>25</span> 
+                       <span>25 cupos</span> 
                     </div>
                     <div class="mdl-card__supporting-text">
                         <p>LAB (nimble)</p>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="mdl-card mdl-card-fecha">
                     <div class="mdl-card__title">
-                       <span>25</span> 
+                       <span>25 cupos</span> 
                     </div>
                     <div class="mdl-card__supporting-text">
                         <p>LAB (nimble)</p>
@@ -56,7 +56,7 @@
                 </div>
                 <div class="mdl-card mdl-card-fecha">
                     <div class="mdl-card__title">
-                       <span>25</span> 
+                       <span>25 cupos</span> 
                     </div>
                     <div class="mdl-card__supporting-text">
                         <p>LAB (nimble)</p>
@@ -67,7 +67,7 @@
                 </div>
                 <div class="mdl-card mdl-card-fecha">
                     <div class="mdl-card__title">
-                       <span>25</span> 
+                       <span>25 cupos</span> 
                     </div>
                     <div class="mdl-card__supporting-text">
                         <p>LAB (nimble)</p>
@@ -78,7 +78,7 @@
                 </div>
                 <div class="mdl-card mdl-card-fecha">
                     <div class="mdl-card__title">
-                       <span>25</span> 
+                       <span>25 cupos</span> 
                     </div>
                     <div class="mdl-card__supporting-text">
                         <p>LAB (nimble)</p>
@@ -89,7 +89,7 @@
                 </div>
                 <div class="mdl-card mdl-card-fecha">
                     <div class="mdl-card__title">
-                       <span>25</span> 
+                       <span>25 cupos</span> 
                     </div>
                     <div class="mdl-card__supporting-text">
                         <p>LAB (nimble)</p>
