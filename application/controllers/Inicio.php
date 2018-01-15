@@ -18,14 +18,14 @@ class Inicio extends CI_Controller {
 		$datos = $this->M_eventos->getDatosEventos();
 		$data['nombres'] = _getSesion('Nombres');
 		$data['fecha'] = $datos[0]->fecha;
-		$existe = $this->M_eventos->verificarInscritos(_getSesion('Id'));
+		/*$existe = $this->M_eventos->verificarInscritos(_getSesion('Id'));
 		if($existe == null) {
 			$html_datos = $this->htmlDatos('');
 		}else {
 			_log('entra');
 			$html_datos = $this->htmlDatos('disabled');
 		}	
-		$data['html'] = $html_datos;
+		$data['html'] = $html_datos;*/
 		$this->load->view('v_index', $data);
 	}
 

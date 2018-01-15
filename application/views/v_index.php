@@ -31,7 +31,65 @@
         <div class="container text-center relative">
             <h2>Bienvenido al evento Leonardo</h2>
             <div class="mdl-calendario">
-                <h2 style="color: #fff;">2018-01-16</h2>
+                <h2 style="color: #fff;">15-01-2018</h2>
+                <div class="mdl-card mdl-card-fecha">
+                    <div class="mdl-card__title">
+                       <span>25 cupos</span> 
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>LAB (nimble)</p>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Inscribir</button>
+                    </div>
+                </div>
+                <div class="mdl-card mdl-card-fecha">
+                    <div class="mdl-card__title">
+                       <span>25 cupos</span> 
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>LAB (nimble)</p>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Inscribir</button>
+                    </div>
+                </div>
+                <div class="mdl-card mdl-card-fecha">
+                    <div class="mdl-card__title">
+                       <span>25 cupos</span> 
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>LAB (nimble)</p>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Inscribir</button>
+                    </div>
+                </div>
+                <div class="mdl-card mdl-card-fecha">
+                    <div class="mdl-card__title">
+                       <span>25 cupos</span> 
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>LAB (nimble)</p>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Inscribir</button>
+                    </div>
+                </div>
+                <div class="mdl-card mdl-card-fecha">
+                    <div class="mdl-card__title">
+                       <span>25 cupos</span> 
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>LAB (nimble)</p>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Inscribir</button>
+                    </div>
+                </div>
+            </div>  
+            <div class="mdl-calendario">
+                <h2 style="color: #fff;">16-01-2018</h2>
                 <div class="mdl-card mdl-card-fecha">
                     <div class="mdl-card__title">
                        <span>25 cupos</span> 
@@ -98,7 +156,65 @@
                         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Inscribir</button>
                     </div>
                 </div>
-            </div>      
+            </div>
+            <div class="mdl-calendario">
+                <h2 style="color: #fff;">17-01-2018</h2>
+                <div class="mdl-card mdl-card-fecha">
+                    <div class="mdl-card__title">
+                       <span>25 cupos</span> 
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>LAB (nimble)</p>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Inscribir</button>
+                    </div>
+                </div>
+                <div class="mdl-card mdl-card-fecha">
+                    <div class="mdl-card__title">
+                       <span>25 cupos</span> 
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>LAB (nimble)</p>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Inscribir</button>
+                    </div>
+                </div>
+                <div class="mdl-card mdl-card-fecha">
+                    <div class="mdl-card__title">
+                       <span>25 cupos</span> 
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>LAB (nimble)</p>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Inscribir</button>
+                    </div>
+                </div>
+                <div class="mdl-card mdl-card-fecha">
+                    <div class="mdl-card__title">
+                       <span>25 cupos</span> 
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>LAB (nimble)</p>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Inscribir</button>
+                    </div>
+                </div>
+                <div class="mdl-card mdl-card-fecha">
+                    <div class="mdl-card__title">
+                       <span>25 cupos</span> 
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>LAB (nimble)</p>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Inscribir</button>
+                    </div>
+                </div>
+            </div>    
         </div>
     </section>
 	<script src="<?php echo RUTA_JS?>jquery-3.2.1.min.js?v=<?php echo time();?>"></script>
