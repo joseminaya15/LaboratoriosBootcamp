@@ -87,3 +87,29 @@ body{
 .mdl-textfield__input{
 	font-family: 'RobotoRegular';
 }
+/*CARDS-FECHAS*/
+.mdl-card-fecha{
+    max-width: 140px;
+    display: inline-block;
+    width: 100%;
+    margin: 3px;
+}
+.mdl-card-fecha .mdl-card__supporting-text{
+	width: 100%;
+	text-align: center;
+}
+.mdl-card-fecha .mdl-card__supporting-text p{
+	font-size: 20px;
+	font-family: 'RobotoRegular';
+	margin: 0;
+}
+.mdl-card-fecha .mdl-card__actions{
+	padding: 16px;
+}
+.mdl-card-fecha .mdl-card__actions button{
+    width: 100%;
+    text-transform: inherit;
+    font-family: 'RobotoRegular';
+    height: 30px;
+    line-height: 30px;
+}
