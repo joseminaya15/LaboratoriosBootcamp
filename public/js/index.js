@@ -32,3 +32,18 @@ function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
 }
+
+function inscribir(num, vacant) {
+	var i = $('#vacantes'+num).text();
+	i--;
+	if(i < 1) {
+		return;
+	}
+	$('#vacantes'+num).text(i);
+
+	$( ".cards .col-xs-3" ).each(function() {
+		if($(this).attr('id') != 'card'+num) {
+			$( this ).css( "background", "red" );
+		}
+	});
+}

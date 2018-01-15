@@ -31,9 +31,10 @@
         <div class="card-login">
             <div class="mdl-card mdl-card-login">
             	<h2 style="color: #fff;">Bienvenido al evento <?php echo $nombres ?></h2>
-                <div class="mdl-card__title">
-                </div>
             </div>
+            <div class="col-xs-12 cards">
+            	<?php echo $html ?>
+            </div>            
         </div>
     </section>
 	<script src="<?php echo RUTA_JS?>jquery-3.2.1.min.js?v=<?php echo time();?>"></script>
