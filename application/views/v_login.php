@@ -41,12 +41,12 @@
                             <i class="mdi mdi-email"></i>
                         </div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" id="correo">
+                            <input class="mdl-textfield__input" type="text" id="correo" maxlength="50">
                             <label class="mdl-textfield__label" for="correo">Correo Electr&oacute;nico</label>
                         </div>
                     </div>
                     <div class="">
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Ingresar</button>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="ingresar()">Ingresar</button>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
     <script src="<?php echo RUTA_PLUGINS?>jquery-mask/jquery.mask.min.js?v=<?php echo time();?>"></script>
 	<script src="<?php echo RUTA_PLUGINS?>mdl/material.min.js?v=<?php echo time();?>"></script>
     <script src="<?php echo RUTA_PLUGINS?>toaster/toastr.js?v=<?php echo time();?>"></script>
-    <script src="<?php echo RUTA_JS?>jsmenu.js?v=<?php echo time();?>"></script>
+    <script src="<?php echo RUTA_JS?>Utils.js?v=<?php echo time();?>"></script>
     <script src="<?php echo RUTA_JS?>index.js?v=<?php echo time();?>"></script>
     <script type="text/javascript">
     	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
