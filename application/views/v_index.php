@@ -32,6 +32,7 @@
             <div class="mdl-card mdl-card-login">
             	<h2 style="color: #fff;">Bienvenido al evento <?php echo $nombres ?></h2>
             </div>
+            <h2 style="color: #fff;"><?php echo $fecha ?></h2>
             <div class="col-xs-12 cards">
             	<?php echo $html ?>
             </div>            

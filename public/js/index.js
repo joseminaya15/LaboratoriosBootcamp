@@ -33,17 +33,26 @@ function validateEmail(email) {
     return re.test(email);
 }
 
+var cont = 0;
 function inscribir(num, vacant) {
 	var i = $('#vacantes'+num).text();
+	if(cont == 1) {
+		return;
+	}
+	cont++;
 	i--;
 	if(i < 1) {
 		return;
 	}
 	$('#vacantes'+num).text(i);
-
 	$( ".cards .col-xs-3" ).each(function() {
 		if($(this).attr('id') != 'card'+num) {
-			$( this ).css( "background", "red" );
+			$( this ).css( "background", "#E0E0E0" );
+			$(this).children().find('.boton').children().attr('id');
+			var boton = $(this).children().find('.boton').children().attr('id');
+			$('#'+boton).prop( "disabled", true );
+			var texto = $(this).children().find('.nombre').find('h4').text()
+			console.log(texto);
 		}
 	});
 }
