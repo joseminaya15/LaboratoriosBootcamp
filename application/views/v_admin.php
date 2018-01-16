@@ -13,6 +13,7 @@
 	<title>Laboratorios Bootcamp</title>
     <!-- <link rel="shortcut icon" href="<?php echo RUTA_IMG?>logo/logo_favicon.png"> -->
     <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>bootstrap/bootstrap.min.css?v=<?php echo time();?>">
+    <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>bootstrap-table/src/bootstrap-table.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>bootstrap-select/css/bootstrap-select.min.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>datetimepicker/css/bootstrap-material-datetimepicker.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>mdl/material.indigo.min.css?v=<?php echo time();?>">
@@ -29,45 +30,33 @@
     <section id="principal">
         <div class="fondo-imagen"></div>
         <div class="container">
-            <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="buscador" placeholder="Search for..." maxlength="100">
+                      <span class="input-group-btn">
+                        <button class="btn btn-secondary" type="button" onclick="buscar()">Go!</button>
+                      </span>
+                    </div>
+                  </div>
+            </div>
+            <table data-toggle="table"
+                   data-url="/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/">
                 <thead>
-                    <tr>
-                        <th>Nombres</th>
-                        <th>Pa&iacute;</th>
-                        <th>Correo electr&oacute;nico</th>
-                        <th>Fecha de evento</th>
-                        <th>Nombre de evento</th>
-                    </tr>
+                <tr>
+                    <th data-field="name">Name</th>
+                    <th data-field="stargazers_count">Stars</th>
+                    <th data-field="forks_count">Forks</th>
+                    <th data-field="description">Description</th>
+                </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Acrylic (Transparent)</td>
-                        <td>25</td>
-                        <td>$2.90</td>
-                        <td>$2.90</td>
-                        <td>$2.90</td>
-                    </tr>
-                    <tr>
-                        <td>Plywood (Birch)</td>
-                        <td>50</td>
-                        <td>$1.25</td>
-                        <td>$2.90</td>
-                        <td>$2.90</td>
-                    </tr>
-                    <tr>
-                        <td>Laminate (Gold on Blue)</td>
-                        <td>10</td>
-                        <td>$2.35</td>
-                        <td>$2.90</td>
-                        <td>$2.90</td>
-                    </tr>
-                </tbody>
             </table>
         </div>
     </section>
 	<script src="<?php echo RUTA_JS?>jquery-3.2.1.min.js?v=<?php echo time();?>"></script>
 	<script src="<?php echo RUTA_JS?>jquery-1.11.2.min.js?v=<?php echo time();?>"></script>
 	<script src="<?php echo RUTA_PLUGINS?>bootstrap/bootstrap.min.js?v=<?php echo time();?>"></script>
+    <script src="<?php echo RUTA_PLUGINS?>bootstrap-table/src/bootstrap-table.js?v=<?php echo time();?>"></script>
 	<script src="<?php echo RUTA_PLUGINS?>bootstrap-select/js/bootstrap-select.min.js?v=<?php echo time();?>"></script>
 	<script src="<?php echo RUTA_PLUGINS?>bootstrap-select/js/i18n/defaults-es_ES.min.js?v=<?php echo time();?>"></script>
     <script src="<?php echo RUTA_PLUGINS?>moment/moment.min.js?v=<?php echo time();?>"></script>
@@ -76,7 +65,7 @@
 	<script src="<?php echo RUTA_PLUGINS?>mdl/material.min.js?v=<?php echo time();?>"></script>
     <script src="<?php echo RUTA_PLUGINS?>toaster/toastr.js?v=<?php echo time();?>"></script>
     <script src="<?php echo RUTA_JS?>Utils.js?v=<?php echo time();?>"></script>
-    <script src="<?php echo RUTA_JS?>index.js?v=<?php echo time();?>"></script>
+    <script src="<?php echo RUTA_JS?>admin.js?v=<?php echo time();?>"></script>
     <script type="text/javascript">
     	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
         	$('select').selectpicker('mobile');

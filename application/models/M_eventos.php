@@ -65,4 +65,8 @@ class M_eventos extends  CI_Model{
         $result = $this->db->query($sql, array($id, $id_evento));
         return $result->result();
     }
+
+    function aa($id, $id_evento) {
+
+    }
 }
