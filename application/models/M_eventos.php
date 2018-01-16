@@ -32,10 +32,18 @@ class M_eventos extends  CI_Model{
         return $result->result();
     }
 
-    function getDatosEventosSig() {
+    function getDatosEventos1() {
         $sql = "SELECT *
                   FROM eventos
                 WHERE fecha = '2018-01-16'";
+        $result = $this->db->query($sql, array());
+        return $result->result();
+    }
+
+    function getDatosEventos2() {
+        $sql = "SELECT *
+                  FROM eventos
+                WHERE fecha = '2018-01-17'";
         $result = $this->db->query($sql, array());
         return $result->result();
     }

@@ -34,9 +34,10 @@ function validateEmail(email) {
 }
 
 var cont = 0;
-function inscribir(num, vacant, dato) {
-	var evento = $(dato).parent().parent().find('.nombre').find('h4').text();
+function inscribir(num, pant, dato) {
+	var evento = $(dato).parent().parent().find('.mdl-card__supporting-text').find('p').text();
 	var i = $('#vacantes'+num).text();
+	console.log(evento);
 	if(cont == 1) {
 		return;
 	}
@@ -55,10 +56,10 @@ function inscribir(num, vacant, dato) {
 		try{
         	data = JSON.parse(data);
         	if(data.error == 0){
-        		$( ".cards .col-xs-3" ).each(function() {
-				$( this ).css( "background", "#E0E0E0" );
+        		$(".mdl-card.mdl-card-fecha").each(function() {
+				$(this).css( "background", "#E0E0E0" );
 				$(this).children().find('.boton').children().attr('id');
-				var boton = $(this).children().find('.boton').children().attr('id');
+				var boton = $(this).children().find('.mdl-card__actions').children().attr('id');
 				$('#'+boton).prop( "disabled", true );
 			});
         	}else {

@@ -18,35 +18,32 @@ class Inicio extends CI_Controller {
 		$datos = $this->M_eventos->getDatosEventos();
 		$data['nombres'] = _getSesion('Nombres');
 		$data['fecha'] = $datos[0]->fecha;
-		/*$existe = $this->M_eventos->verificarInscritos(_getSesion('Id'));
+		$existe = $this->M_eventos->verificarInscritos(_getSesion('Id'));
 		if($existe == null) {
-			$html_datos = $this->htmlDatos('');
+			$html_datos = $this->htmlDatos('', '');
 		}else {
-			_log('entra');
-			$html_datos = $this->htmlDatos('disabled');
+			$html_datos = $this->htmlDatos('disabled', '#E0E0E0');
 		}	
-		$data['html'] = $html_datos;*/
+		$data['html'] = $html_datos;
 		$this->load->view('v_index', $data);
 	}
 
-	function htmlDatos($dato) {
+	function htmlDatos($dato, $color) {
 		$datos = $this->M_eventos->getDatosEventos();
 		$html = null;
 		$count = 0;
 		foreach ($datos as $key) {
-			$html .= '<div class="col-xs-3" style="background: #fff; height: 200px" id="card'.$count.'">
-		            	<div class="col-xs-12">
-		            		<div class="col-xs-6">
-		            			<span id="vacantes'.$count.'">'.$datos[$count]->vacantes.'</span>
-		            		</div>
-		            		<div class="col-xs-12 nombre">
-		            			<h4>'.$datos[$count]->event_name.'</h4>
-		            		</div>
-		            		<div class="col-xs-12 boton">
-		            			<button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="btnInscr'.$count.'" onclick="inscribir('.$count.', 25, this);" '.$dato.'>Inscribir</button>
-		            		</div>
-		            	</div>
-		            </div>';
+		       $html .= '<div class="mdl-card mdl-card-fecha" id="card'.$count.'" style="background: '.$color.'">
+		                    <div class="mdl-card__title">
+		                       <span id="vacantes'.$count.'">'.$datos[$count]->vacantes.'</span> 
+		                    </div>
+		                    <div class="mdl-card__supporting-text nombre">
+		                        <p>'.$datos[$count]->event_name.'</p>
+		                    </div>
+		                    <div class="mdl-card__actions">
+		                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="btnInscr'.$count.'" onclick="inscribir('.$count.', 1, this);" '.$dato.'>Inscribir</button>
+		                    </div>
+		                </div>';
 		    $count++;
 		}
 		return $html;
