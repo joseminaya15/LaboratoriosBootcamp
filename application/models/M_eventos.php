@@ -56,11 +56,12 @@ class M_eventos extends  CI_Model{
         return $result->row()->Id;
     }
 
-    function verificarInscritos($id) {
+    function verificarInscritos($id, $id_evento) {
         $sql = "SELECT *
                   FROM inscritos
-                WHERE id_pers = ?";
-        $result = $this->db->query($sql, array($id));
+                WHERE id_pers = ?
+                  AND id_evento = ?";
+        $result = $this->db->query($sql, array($id, $id_evento));
         return $result->row()->Id;
     }
 }

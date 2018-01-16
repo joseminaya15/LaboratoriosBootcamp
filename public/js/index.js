@@ -55,8 +55,9 @@ function inscribir(num, pant, dato) {
 	}).done(function(data){
 		try{
         	data = JSON.parse(data);
+        	var texto = '.mdl-card.mdl-card-fecha.cards'+cont;
         	if(data.error == 0){
-        		$(".mdl-card.mdl-card-fecha").each(function() {
+        		$(texto).each(function() {
 				$(this).css( "background", "#E0E0E0" );
 				$(this).children().find('.boton').children().attr('id');
 				var boton = $(this).children().find('.mdl-card__actions').children().attr('id');

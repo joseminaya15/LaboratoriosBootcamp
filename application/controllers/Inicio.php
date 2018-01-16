@@ -18,12 +18,14 @@ class Inicio extends CI_Controller {
 		$datos = $this->M_eventos->getDatosEventos();
 		$data['nombres'] = _getSesion('Nombres');
 		$data['fecha'] = $datos[0]->fecha;
-		$existe = $this->M_eventos->verificarInscritos(_getSesion('Id'));
+		$existe = $this->M_eventos->verificarInscritos(_getSesion('Id'), _getSesion('id_evento'));
 		if($existe == null) {
 			$html_datos = $this->htmlDatos('', '');
 		}else {
 			$html_datos = $this->htmlDatos('disabled', '#E0E0E0');
-		}	
+		}
+		$html_datos1 = $this->htmlDatos1('', '');
+	    $data['html1'] = $html_datos1;
 		$data['html'] = $html_datos;
 		$this->load->view('v_index', $data);
 	}
@@ -33,7 +35,7 @@ class Inicio extends CI_Controller {
 		$html = null;
 		$count = 0;
 		foreach ($datos as $key) {
-		       $html .= '<div class="mdl-card mdl-card-fecha" id="card'.$count.'" style="background: '.$color.'">
+		       $html .= '<div class="mdl-card mdl-card-fecha cards0" id="card'.$count.'" style="background: '.$color.'">
 		                    <div class="mdl-card__title">
 		                       <span id="vacantes'.$count.'">'.$datos[$count]->vacantes.'</span> 
 		                    </div>
@@ -45,6 +47,29 @@ class Inicio extends CI_Controller {
 		                    </div>
 		                </div>';
 		    $count++;
+		}
+		return $html;
+	}
+
+	function htmlDatos1($dato, $color) {
+		//$datos  = $this->M_eventos->getDatosEventos();
+		//$datos = $this->M_eventos->getDatosEventos1();
+		$datos = $this->M_eventos->getDatosEventos2();
+		$html = null;
+		$count1 = 0;
+		foreach ($datos as $key) {
+	            $html .= '<div class="mdl-card mdl-card-fecha cards1" id="card1'.$count1.'" style="background: '.$color.'">
+	                    <div class="mdl-card__title">
+	                       <span id="vacantes1'.$count1.'">'.$datos[$count1]->vacantes.'</span> 
+	                    </div>
+	                    <div class="mdl-card__supporting-text nombre">
+	                        <p>'.$datos[$count1]->event_name.'</p>
+	                    </div>
+	                    <div class="mdl-card__actions">
+	                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="btnInscr1'.$count1.'" onclick="inscribir(1'.$count1.', 2, this);" '.$dato.'>Inscribir</button>
+	                    </div>
+	                </div>';
+		    $count1++;
 		}
 		return $html;
 	}
@@ -61,6 +86,10 @@ class Inicio extends CI_Controller {
         	$arrayInsert = array('id_evento' => $id_evento,
         						 'id_pers'   => _getSesion('Id') );
         	$this->M_eventos->insertarDatos($arrayInsert, 'inscritos');
+
+        	$session = array('id_evento' => $id_evento,
+								 'evento' => $evento);
+          	$this->session->set_userdata($session);
         	$data['error'] = EXIT_SUCCESS;
         }catch(Exception $e) {
            $data['msj'] = $e->getMessage();
