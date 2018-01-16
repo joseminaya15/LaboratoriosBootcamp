@@ -41,7 +41,7 @@ class Inicio extends CI_Controller {
 		$html = null;
 		$count = 0;
 		foreach ($datos as $key) {
-		       $html .= '<div class="mdl-card mdl-card-fecha cards0" id="card'.$count.'" style="background: '.$color.'">
+		       $html .= '<div class="mdl-card mdl-card-fecha cards1" id="card'.$count.'" style="background: '.$color.'">
 		                    <div class="mdl-card__title">
 		                       <span id="vacantes'.$count.'">'.$datos[$count]->vacantes.'</span> 
 		                    </div>
@@ -72,7 +72,7 @@ class Inicio extends CI_Controller {
 		$html = null;
 		$count1 = 0;
 		foreach ($datos as $key) {
-	            $html .= '<div class="mdl-card mdl-card-fecha cards1" id="card1'.$count1.'" style="background: '.$color.'">
+	            $html .= '<div class="mdl-card mdl-card-fecha cards2" id="card1'.$count1.'" style="background: '.$color.'">
 	                    <div class="mdl-card__title">
 	                       <span id="vacantes1'.$count1.'">'.$datos[$count1]->vacantes.'</span> 
 	                    </div>
