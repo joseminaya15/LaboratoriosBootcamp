@@ -35,7 +35,8 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
     max-width: 900px;
-    width: 100%;
+    width: 100%;    
+    padding: 10px;
 }
 .mdl-card-login{
 	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -71,7 +72,22 @@ body{
     float: right;
     padding: 30px;
 }
-
+.mdl-card-login .mdl-card__supporting-text .event{
+		display: none;
+}
+.mdl-card-login .mdl-card__supporting-text button{
+	width: 100%;
+}
+/*MDL-INPUTS*/
+.mdl-input{
+	display: flex;
+	align-items: center;
+    margin: 15px 0;
+}
+.mdl-input .mdl-icon{
+    width: 30px;
+    margin-right: 5px;
+}
 .mdl-input .mdl-textfield{
 	width: 100%;
 }
@@ -79,6 +95,9 @@ body{
 .mdl-textfield--floating-label.is-dirty .mdl-textfield__label, 
 .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label{
 	color: #000000;
+}
+.mdl-textfield__label{
+	font-size: 15px;
 }
 .mdl-textfield__label:after{
 	background-color: #000000;
@@ -116,4 +135,46 @@ body{
 }
 .container.relative{
 	position: relative;
+}
+
+@media ( max-width: 768px ){
+	.mdl-card-login .mdl-card__supporting-text{
+		float: none;
+		margin: auto;
+	}
+	.mdl-card-login .mdl-card__title{
+		display: none;
+	}
+	.mdl-card-login .mdl-card__supporting-text .event{
+		display: block;
+	}
+	.mdl-card-login .mdl-card__supporting-text .event h2{
+		font-size: 18px;
+	    font-family: 'RobotoBold';
+	    line-height: 20px;
+	    margin: 20px 0 5px 0;
+	}
+	.mdl-card-login .mdl-card__supporting-text .event p{
+		margin: 0;
+    	font-family: 'RobotoRegular';
+	}
+	.mdl-card-login{
+		background-color: transparent;
+		box-shadow: none;
+	}
+}
+@media ( max-width: 420px ){
+	.card-login{
+		position: inherit;
+	    transform: inherit;
+	    padding: 0;
+	    max-width: 100%;
+	    box-shadow: none;
+	}
+	.mdl-card-login .mdl-card__supporting-text{
+		max-width: 100%;
+	}
+	.fondo-imagen{
+		display: none;
+	}
 }

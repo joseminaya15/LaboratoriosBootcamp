@@ -36,6 +36,10 @@
                 </div>
                 <div class="mdl-card__supporting-text">
                     <img class="logo" src="<?php echo RUTA_IMG;?>logo/logo-home.png">
+                    <div class="event">
+                        <h2>HPE Latin America Hybrid IT Bootcamp</h2>
+                        <p>January 30th to February 1st, 2018</p>
+                    </div>
                     <div class="mdl-input">
                         <div class="mdl-icon">
                             <i class="mdi mdi-email"></i>
