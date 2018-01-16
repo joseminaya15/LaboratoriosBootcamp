@@ -15,6 +15,11 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
+		$this->session->unset_userdata('correo');
+	    $this->session->unset_userdata('Nombres');
+	    $this->session->unset_userdata('Apellidos');
+	    $this->session->unset_userdata('Pais');
+	    $this->session->unset_userdata('Id');
 		$this->load->view('v_login');
 	}
 

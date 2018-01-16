@@ -15,6 +15,10 @@ class Inicio extends CI_Controller {
 
 	public function index()
 	{
+		if(_getSesion('correo') == null) {
+			$newURL = 'Login';
+			header('Location: '.$newURL);
+		}
 		$datos = $this->M_eventos->getDatosEventos();
 		$html_datos 	 = $this->htmlDatos();
 		$data['nombres'] = _getSesion('Nombres');
