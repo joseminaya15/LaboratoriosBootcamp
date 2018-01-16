@@ -150,6 +150,7 @@
             </div>
             <div class="mdl-calendario">
                 <h2 style="color: #fff;">17-01-2018</h2>
+                <?php echo $html2 ?>
                 <!--<div class="mdl-card mdl-card-fecha">
                     <div class="mdl-card__title">
                        <span>25 cupos</span> 

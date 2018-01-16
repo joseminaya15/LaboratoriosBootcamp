@@ -49,7 +49,8 @@ function inscribir(num, pant, dato) {
 	$('#vacantes'+num).text(i);
 	$.ajax({
 		data  : { vacantes : i,
-				  evento : evento},
+				  evento : evento,
+				  pant   : pant},
 		url   : 'Inicio/inscribir',
 		type  : 'POST'
 	}).done(function(data){

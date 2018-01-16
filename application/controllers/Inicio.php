@@ -16,22 +16,28 @@ class Inicio extends CI_Controller {
 	public function index()
 	{
 		$datos = $this->M_eventos->getDatosEventos();
+		$html_datos 	 = $this->htmlDatos();
 		$data['nombres'] = _getSesion('Nombres');
-		$data['fecha'] = $datos[0]->fecha;
-		$existe = $this->M_eventos->verificarInscritos(_getSesion('Id'), _getSesion('id_evento'));
-		if($existe == null) {
-			$html_datos = $this->htmlDatos('', '');
-		}else {
-			$html_datos = $this->htmlDatos('disabled', '#E0E0E0');
-		}
-		$html_datos1 = $this->htmlDatos1('', '');
-	    $data['html1'] = $html_datos1;
-		$data['html'] = $html_datos;
+		$data['fecha']   = $datos[0]->fecha;
+		$html_datos1     = $this->htmlDatos1();
+	    $data['html1']   = $html_datos1;
+		$data['html']    = $html_datos;
+		$data['html2']   = $this->htmlDatos2();
 		$this->load->view('v_index', $data);
 	}
 
-	function htmlDatos($dato, $color) {
+	function htmlDatos() {
+		$color = '';
+		$dato = '';
 		$datos = $this->M_eventos->getDatosEventos();
+		foreach ($datos as $key) {
+			$existe = '';
+			$existe = $this->M_eventos->verificarInscritos(_getSesion('Id'), $key->Id);
+			if(count($existe) != 0) {
+				$dato = 'disabled';
+				$color = '#E0E0E0';
+			}
+		}
 		$html = null;
 		$count = 0;
 		foreach ($datos as $key) {
@@ -51,10 +57,18 @@ class Inicio extends CI_Controller {
 		return $html;
 	}
 
-	function htmlDatos1($dato, $color) {
-		//$datos  = $this->M_eventos->getDatosEventos();
-		//$datos = $this->M_eventos->getDatosEventos1();
+	function htmlDatos1() {
+		$color = '';
+		$dato = '';
 		$datos = $this->M_eventos->getDatosEventos2();
+		foreach ($datos as $key) {
+			$existe = '';
+			$existe = $this->M_eventos->verificarInscritos(_getSesion('Id'), $key->Id);
+			if(count($existe) != 0) {
+				$dato = 'disabled';
+				$color = '#E0E0E0';
+			}
+		}
 		$html = null;
 		$count1 = 0;
 		foreach ($datos as $key) {
@@ -74,13 +88,55 @@ class Inicio extends CI_Controller {
 		return $html;
 	}
 
+	function htmlDatos2() {
+		$color = '';
+		$dato = '';
+		$datos = $this->M_eventos->getDatosEventos3();
+		foreach ($datos as $key) {
+			$existe = '';
+			$existe = $this->M_eventos->verificarInscritos(_getSesion('Id'), $key->Id);
+			if(count($existe) != 0) {
+				$dato = 'disabled';
+				$color = '#E0E0E0';
+			}else {
+				$color = '#fff';
+			}
+		}
+		$html = null;
+		$count2 = 0;
+		foreach ($datos as $key) {
+	            $html .= '<div class="mdl-card mdl-card-fecha cards3" id="card2'.$count2.'" style="background: '.$color.'">
+	                    <div class="mdl-card__title">
+	                       <span id="vacantes2'.$count2.'">'.$datos[$count2]->vacantes.'</span> 
+	                    </div>
+	                    <div class="mdl-card__supporting-text nombre">
+	                        <p>'.$datos[$count2]->event_name.'</p>
+	                    </div>
+	                    <div class="mdl-card__actions">
+	                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="btnInscr2'.$count2.'" onclick="inscribir(2'.$count2.', 3, this);" '.$dato.'>Inscribir</button>
+	                    </div>
+	                </div>';
+		    $count2++;
+		}
+		return $html;
+	}
+
 	function inscribir() {
 		$data['error'] = EXIT_ERROR;
         $data['msj']   = null;
         try {
         	$vacantes = _post('vacantes');
         	$evento   = _post('evento');
-        	$id_evento = $this->M_eventos->getDatosIdEventos($evento);
+        	$pant     = _post('pant');
+        	if($pant == 1) {
+        		$id_evento = $this->M_eventos->getDatosIdEventos($evento, '2018-01-15');
+        	}else if($pant == 2) {
+        		$id_evento = $this->M_eventos->getDatosIdEventos($evento, '2018-01-16');
+        		//_logLastQuery();
+        	}else if($pant == 3) {
+        		$id_evento = $this->M_eventos->getDatosIdEventos($evento, '2018-01-17');
+        	}
+        	//_log($id_evento);
         	$updt = array('vacantes' => $vacantes);
         	$updt_datos = $this->M_eventos->updateDatos($updt, $id_evento, 'eventos');
         	$arrayInsert = array('id_evento' => $id_evento,
