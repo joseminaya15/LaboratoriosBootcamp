@@ -36,7 +36,7 @@ function validateEmail(email) {
 var cont = 0;
 function inscribir(num, pant, dato) {
 	var evento = $(dato).parent().parent().find('.mdl-card__supporting-text').find('p').text();
-	var i = $('#vacantes'+num).text();
+	var i = $('#vacantes'+num).find('label').text();
 	//console.log(evento);
 	if(cont == 1) {
 		return;
@@ -46,7 +46,7 @@ function inscribir(num, pant, dato) {
 	if(i < 1) {
 		return;
 	}
-	$('#vacantes'+num).text(i);
+	$('#vacantes'+num).find('label').text(i);
 	$.ajax({
 		data  : { vacantes : i,
 				  evento : evento,
@@ -60,8 +60,7 @@ function inscribir(num, pant, dato) {
         	if(data.error == 0){
         		$(texto).each(function() {
 				$(this).css( "background", "#E0E0E0" );
-				$(this).children().find('.boton').children().attr('id');
-				var boton = $(this).find('.mdl-card__actions').children().attr('id');
+				var boton = $(this).find('.mdl-card__actions').find('button').attr('id');
 				$('#'+boton).prop( "disabled", true );
 				cont = 0;
 			});
