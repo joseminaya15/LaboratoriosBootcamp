@@ -30,7 +30,7 @@
             </div>
             <div class="nombres">
                 <p>Bienvenido</p>
-                <h2><?php echo $nombres ?></h2>
+                <h2><?php echo $nombres.' '.$apellidos ?></h2>
             </div>
             <div class="mdl-calendario">
             	<?php echo $html ?>
