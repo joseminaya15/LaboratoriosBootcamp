@@ -12,7 +12,7 @@ body{
     width: 100%;
     height: 100%;
     display: block;
-    position: absolute;
+    position: fixed;
     right: 0;
     bottom: 0;
     top: 0;
@@ -20,7 +20,7 @@ body{
 }
 .fondo-imagen:BEFORE{
 	content: '';
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -98,6 +98,10 @@ body{
 .mdl-card-login .mdl-card__supporting-text button{
 	width: 100%;
 }
+/*MDL-CALENDARIO*/
+.mdl-calendario{
+	margin: 25px 0;
+}
 /*MDL-INPUTS*/
 .mdl-input{
 	display: flex;
@@ -145,7 +149,7 @@ body{
     color: #FFFFFF;
     top: 0;
     left: 15px;
-    padding: 2px 5px;
+    padding: 3px 15px;
     display: none;
     font-size: 13px;
     vertical-align: middle;
@@ -153,10 +157,15 @@ body{
     border-top-right-radius: 6px;
 }
 .mdl-card-fecha .fecha i{
-    font-size: 14px;
+    font-size: 18px;
     color: #FFFFFF;
     vertical-align: middle;
     margin-right: 5px;
+}
+.mdl-card-fecha .fecha label{
+	margin: 0;
+	vertical-align: middle;
+	font-size: 16px;
 }
 .mdl-card-fecha:nth-child(1) .fecha{
 	display: block;
@@ -168,10 +177,19 @@ body{
 .mdl-card.mdl-card-fecha.cards2:nth-child(3) .mdl-card__supporting-text .nombre-evento{
 	max-width: 100px;
 }
+.mdl-card.mdl-card-fecha.cards3:LAST-CHILD .mdl-card__supporting-text .nombre-evento p,
+.mdl-card.mdl-card-fecha.cards2:LAST-CHILD .mdl-card__supporting-text .nombre-evento p{
+    font-size: 15px;
+    line-height: 18px;
+}
+.mdl-card.mdl-card-fecha.cards1:LAST-CHILD .mdl-card__supporting-text .nombre-evento p{
+	font-size: 14px;
+    line-height: 18px;
+}
 .mdl-card-fecha .mdl-card__supporting-text{
 	width: 100%;
 	text-align: right;
-    padding: 0 16px;
+    padding: 0 12px;
 }
 .mdl-card-fecha .mdl-card__supporting-text p{
 	font-size: 22px;
@@ -214,10 +232,16 @@ body{
 .container.relative{
 	position: relative;
 	max-width: 1045px;
+	-webkit-transition: max-width .4s ease-in-out;
+	-moz-transition: max-width .4s ease-in-out;
+	-ms-transition: max-width .4s ease-in-out;
+	-o-transition: max-width .4s ease-in-out;
+	transition: max-width .4s ease-in-out;
 }
 .mdl-card__supporting-text .nombre-evento{
-	height: 40px;
+	height: 46px;
     position: relative;
+    margin-bottom: 5px;
 }
 .mdl-card__supporting-text .nombre-evento p{
 	position: absolute;
@@ -230,7 +254,24 @@ body{
 .mdl-card__supporting-text span i.second{
 	margin-left: -15px;
 }
+
+/*BARRA SCROLL*/
+::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+	background-color: #aaa;
+	border-radius: 10px;
+}
 @media ( max-width: 768px ){
+	.container.relative{
+		max-width: 540px;
+	}
 	.mdl-card-login .mdl-card__supporting-text{
 		float: none;
 		margin: auto;
@@ -256,6 +297,22 @@ body{
 		box-shadow: none;
 	}
 }
+@media ( max-width: 560px ){
+	.container.relative{
+	    max-width: 370px;
+	}
+	.nombres p{
+		font-size: 32px;
+	}
+	.nombres h2{
+	    font-size: 36px;
+    	line-height: 32px;
+	}
+	.logo-home img{
+		max-width: 180px;
+    	margin-bottom: 20px;
+	}
+}
 @media ( max-width: 420px ){
 	.card-login{
 		position: inherit;
@@ -267,7 +324,15 @@ body{
 	.mdl-card-login .mdl-card__supporting-text{
 		max-width: 100%;
 	}
-	.fondo-imagen{
-		display: none;
+	.container.relative{
+	    max-width: 320px;
+	    text-align: center;
+	}
+	.nombres h2{
+		font-size: 30px;
+    	line-height: 28px;
+	}
+	.logo-home{
+		text-align: center;
 	}
 }
