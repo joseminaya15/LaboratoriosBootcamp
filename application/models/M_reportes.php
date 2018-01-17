@@ -34,11 +34,9 @@ class M_reportes extends  CI_Model{
                        eventos eve
                  WHERE e.Id = i.id_pers
                    AND i.id_evento = eve.Id
-                   AND CASE WHEN ? IS NOT NULL THEN e.Nombres LIKE '%".$dato."%'
-                            WHEN ? IS NOT NULL THEN eve.event_name LIKE '%".$dato."%' ELSE TRUE END
+                   AND CASE WHEN ? IS NOT NULL THEN e.Nombres LIKE '%".$dato."%' ELSE TRUE END
                 ORDER BY eve.fecha";
-        $result = $this->db->query($sql, array($dato, $dato));
-        _logLastQuery();
+        $result = $this->db->query($sql, array($dato));
         return $result->result();
     }
 
