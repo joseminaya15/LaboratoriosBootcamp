@@ -199,6 +199,11 @@ body{
 	background-color: #000000;
 	color: #FFFFFF;
 }
+.mdl-card-fecha .mdl-card__actions button[disabled]:HOVER{
+	background-color: #C5C5C5;
+    color: #929292;
+    cursor: not-allowed;
+}
 .container.relative{
 	position: relative;
 	max-width: 1045px;
