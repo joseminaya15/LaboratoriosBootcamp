@@ -161,13 +161,20 @@ body{
 .mdl-card-fecha:nth-child(1) .fecha{
 	display: block;
 }
+.mdl-card.mdl-card-fecha.cards2:nth-child(5) .mdl-card__supporting-text .nombre-evento p{
+	font-size: 18px;
+}
+.mdl-card.mdl-card-fecha.cards3:nth-child(3) .mdl-card__supporting-text .nombre-evento,
+.mdl-card.mdl-card-fecha.cards2:nth-child(3) .mdl-card__supporting-text .nombre-evento{
+	max-width: 100px;
+}
 .mdl-card-fecha .mdl-card__supporting-text{
 	width: 100%;
 	text-align: right;
     padding: 0 16px;
 }
 .mdl-card-fecha .mdl-card__supporting-text p{
-	font-size: 18px;
+	font-size: 22px;
     font-family: 'RobotobOLD';
     margin: 0;
     color: #000000;
