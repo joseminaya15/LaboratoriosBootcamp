@@ -46,7 +46,7 @@ class Inicio extends CI_Controller {
 		$count = 0;
 		foreach ($datos as $key) {
 		       $html .= '<div class="mdl-card mdl-card-fecha cards1" id="card'.$count.'" style="background: '.$color.'">
-		       				<div class="fecha"><i class="mdi mdi-date_range"></i>15 Enero</div>
+		       				<div class="fecha"><i class="mdi mdi-date_range"></i>28 Enero</div>
 		                    <div class="mdl-card__supporting-text">
 		                    	<div class="nombre-evento">
 		                        	<p>'.$datos[$count]->event_name.'</p>
@@ -78,7 +78,7 @@ class Inicio extends CI_Controller {
 		$count1 = 0;
 		foreach ($datos as $key) {
 	            $html .= '<div class="mdl-card mdl-card-fecha cards2" id="card1'.$count1.'" style="background: '.$color.'">
-	            		<div class="fecha"><i class="mdi mdi-date_range"></i>15 Enero</div>
+	            		<div class="fecha"><i class="mdi mdi-date_range"></i>29 Enero</div>
 	                    <div class="mdl-card__supporting-text">
 	                    	<div class="nombre-evento">
 	                        	<p>'.$datos[$count1]->event_name.'</p>
@@ -112,7 +112,7 @@ class Inicio extends CI_Controller {
 		$count2 = 0;
 		foreach ($datos as $key) {
 	            $html .= '<div class="mdl-card mdl-card-fecha cards3" id="card2'.$count2.'" style="background: '.$color.'">
-	            		<div class="fecha"><i class="mdi mdi-date_range"></i>15 Enero</div>
+	            		<div class="fecha"><i class="mdi mdi-date_range"></i>30 Enero</div>
 	                    <div class="mdl-card__supporting-text">
 	                    	<div class="nombre-evento">
 	                    		<p>'.$datos[$count2]->event_name.'</p>
