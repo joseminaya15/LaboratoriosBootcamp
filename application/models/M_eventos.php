@@ -66,7 +66,20 @@ class M_eventos extends  CI_Model{
         return $result->result();
     }
 
-    function aa($id, $id_evento) {
-
+    function getDatosInscritos() {
+        $sql = "SELECT e.Nombres,
+                       e.Apellidos,
+                       e.Pais,
+                       e.Email,
+                       eve.event_name,
+                       eve.fecha
+                  FROM emails e,
+                       inscritos i,
+                       eventos eve
+                 WHERE e.Id = i.id_pers
+                   AND i.id_evento = eve.Id
+                ORDER BY eve.fecha";
+        $result = $this->db->query($sql, array($id, $id_evento));
+        return $result->result();
     }
 }
