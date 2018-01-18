@@ -29,7 +29,7 @@
                 <img src="<?php echo RUTA_IMG?>logo/logo-blanco.png"">
             </div>
             <div class="nombres">
-                <p>Bienvenido</p>
+                <p>Welcome</p>
                 <h2><?php echo $nombres.' '.$apellidos ?></h2>
             </div>
             <div class="mdl-calendario">

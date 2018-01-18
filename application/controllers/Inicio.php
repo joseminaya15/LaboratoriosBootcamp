@@ -53,7 +53,7 @@ class Inicio extends CI_Controller {
 		                    	</div>
 		                        <span id="vacantes'.$count.'"><i class="mdi mdi-keyboard_arrow_right"></i><i class="mdi mdi-keyboard_arrow_right second"></i><label>'.$datos[$count]->vacantes.'</label> cupos</span> 
 		                    </div>
-		                    <div class="mdl-card__actions text-right boton">
+		                    <div class="mdl-card__actions boton">
 		                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="btnInscr'.$count.'" onclick="inscribir('.$count.', 1, this);" '.$dato.'>Reservar cupo</button>
 		                    </div>
 		                </div>';
@@ -85,7 +85,7 @@ class Inicio extends CI_Controller {
 	                    	</div>
 	                    	<span id="vacantes1'.$count1.'"><i class="mdi mdi-keyboard_arrow_right"></i><i class="mdi mdi-keyboard_arrow_right second"></i><label>'.$datos[$count1]->vacantes.'</label> cupos</span>
 	                    </div>
-	                    <div class="mdl-card__actions text-right boton">
+	                    <div class="mdl-card__actions boton">
 	                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="btnInscr1'.$count1.'" onclick="inscribir(1'.$count1.', 2, this);" '.$dato.'>Reservar cupo</button>
 	                    </div>
 	                </div>';
@@ -119,7 +119,7 @@ class Inicio extends CI_Controller {
 	                    	</div>
 	                    	<span id="vacantes2'.$count2.'"><i class="mdi mdi-keyboard_arrow_right"></i><i class="mdi mdi-keyboard_arrow_right second"></i><label>'.$datos[$count2]->vacantes.'</label> cupos</span>
 	                    </div>
-	                    <div class="mdl-card__actions text-right boton">
+	                    <div class="mdl-card__actions boton">
 	                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="btnInscr2'.$count2.'" onclick="inscribir(2'.$count2.', 3, this);" '.$dato.'>Reservar cupo</button>
 	                    </div>
 	                </div>';
@@ -136,12 +136,12 @@ class Inicio extends CI_Controller {
         	$evento   = _post('evento');
         	$pant     = _post('pant');
         	if($pant == 1) {
-        		$id_evento = $this->M_eventos->getDatosIdEventos($evento, '2018-01-15');
+        		$id_evento = $this->M_eventos->getDatosIdEventos($evento, '2018-01-30');
         	}else if($pant == 2) {
-        		$id_evento = $this->M_eventos->getDatosIdEventos($evento, '2018-01-16');
+        		$id_evento = $this->M_eventos->getDatosIdEventos($evento, '2018-01-31');
         		//_logLastQuery();
         	}else if($pant == 3) {
-        		$id_evento = $this->M_eventos->getDatosIdEventos($evento, '2018-01-17');
+        		$id_evento = $this->M_eventos->getDatosIdEventos($evento, '2018-02-01');
         	}
         	//_log($id_evento);
         	$updt = array('vacantes' => $vacantes);

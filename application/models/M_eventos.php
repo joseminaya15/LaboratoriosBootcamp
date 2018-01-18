@@ -27,7 +27,7 @@ class M_eventos extends  CI_Model{
     function getDatosEventos() {
         $sql = "SELECT *
                   FROM eventos
-                WHERE fecha = '2018-01-15'";
+                WHERE fecha = '2018-01-30'";
         $result = $this->db->query($sql, array());
         return $result->result();
     }
@@ -35,7 +35,7 @@ class M_eventos extends  CI_Model{
     function getDatosEventos3() {
         $sql = "SELECT *
                   FROM eventos
-                WHERE fecha = '2018-01-17'";
+                WHERE fecha = '2018-02-01'";
         $result = $this->db->query($sql, array());
         return $result->result();
     }
@@ -43,7 +43,7 @@ class M_eventos extends  CI_Model{
     function getDatosEventos2() {
         $sql = "SELECT *
                   FROM eventos
-                WHERE fecha = '2018-01-16'";
+                WHERE fecha = '2018-01-31'";
         $result = $this->db->query($sql, array());
         return $result->result();
     }
