@@ -37,9 +37,9 @@ var cont = 0;
 var datos_array = [];
 function inscribir(num, pant, dato) {
 	var suma = '';
+	var suma2 = '';
 	var evento = $(dato).parent().parent().find('.mdl-card__supporting-text').find('p').text();
 	var i = $('#vacantes'+num).find('label').text();
-	//console.log(evento);
 	if(cont == 1) {
 		return;
 	}
@@ -67,9 +67,14 @@ function inscribir(num, pant, dato) {
 					$('#'+boton).text('Reservado');
 					$('#'+boton).css("color", "#000000");
 					suma = num+10;
+					suma2 = num+20;
 					datos_array.push(num);
+					$('#card'+num).css( "background", "#E0E0E0" );
+					$('#btnInscr'+num).prop( "disabled", true );
 					$('#card'+suma).css( "background", "#E0E0E0" );
 					$('#btnInscr'+suma).prop( "disabled", true );
+					$('#card'+suma2).css( "background", "#E0E0E0" );
+					$('#btnInscr'+suma2).prop( "disabled", true );
 					if(datos_array.length == 3) {
 						$('#ModalThank').modal('show');
 					}

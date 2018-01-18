@@ -127,7 +127,8 @@ class Inicio extends CI_Controller {
 	                </div>';
 		    $count1++;
 		}
-		$session = array('nombre_event' => $nombre_event);
+		$session = array('nombre_antiguo' => _getSesion('nombre_event'),
+						 'nombre_event'   => $nombre_event);
         $this->session->set_userdata($session);
 		return $html;
 	}
@@ -157,7 +158,8 @@ class Inicio extends CI_Controller {
 				}else {
 				    $boton = 'Reservar cupo';
 				    $color_text = ''; 
-				    if(trim($datos[$count2]->event_name) == trim(_getSesion('nombre_event'))) {
+				    _log(_getSesion('nombre_event'));
+				    if(trim($datos[$count2]->event_name) == trim(_getSesion('nombre_antiguo')) || trim($datos[$count2]->event_name) == trim(_getSesion('nombre_event'))) {
 			   			$dato = 'disabled';
 						$color = '#E0E0E0';
 			   		}else {
