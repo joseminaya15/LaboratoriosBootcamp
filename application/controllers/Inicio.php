@@ -36,6 +36,7 @@ class Inicio extends CI_Controller {
 		$dato = '';
 		$id_inscrt = '';
 		$color_text = ''; 
+		$nombre_event = '';
 		$boton = 'Reservar cupo';
 		$datos = $this->M_eventos->getDatosEventos();
 		foreach ($datos as $key) {
@@ -52,7 +53,8 @@ class Inicio extends CI_Controller {
 		foreach ($datos as $key) {
 			   if($datos[$count]->Id == $id_inscrt) {
 			   		$boton = 'Reservado';
-			   		$color_text = '#000'; 
+			   		$color_text = '#000';
+			   		$nombre_event = $datos[$count]->event_name;
 			   }else {
 			   		$boton = 'Reservar cupo';
 			   		$color_text = ''; 
@@ -71,6 +73,8 @@ class Inicio extends CI_Controller {
 		                </div>';
 		    $count++;
 		}
+		$session = array('nombre_event' => $nombre_event);
+        $this->session->set_userdata($session);
 		return $html;
 	}
 
@@ -79,6 +83,7 @@ class Inicio extends CI_Controller {
 		$dato = '';
 		$id_inscrt = '';
 		$color_text = ''; 
+		$nombre_event = '';
 		$boton = 'Reservar cupo';
 		$datos = $this->M_eventos->getDatosEventos2();
 		foreach ($datos as $key) {
@@ -95,10 +100,18 @@ class Inicio extends CI_Controller {
 		foreach ($datos as $key) {
 				if($datos[$count1]->Id == $id_inscrt) {
 			   		$boton = 'Reservado';
-			   		$color_text = '#000'; 
+			   		$color_text = '#000';
+			   		$nombre_event = $datos[$count1]->event_name;
 				}else {
 				    $boton = 'Reservar cupo';
 				    $color_text = ''; 
+				    if(trim($datos[$count1]->event_name) == trim(_getSesion('nombre_event'))) {
+			   			$dato = 'disabled';
+						$color = '#E0E0E0';
+			   		}else {
+			   			$dato = '';
+						$color = '';
+			   		}
 				}
 	            $html .= '<div class="mdl-card mdl-card-fecha cards2" id="card1'.$count1.'" style="background: '.$color.'">
 	            		<div class="fecha"><i class="mdi mdi-date_range"></i><label>31 Enero</label></div>
@@ -114,6 +127,8 @@ class Inicio extends CI_Controller {
 	                </div>';
 		    $count1++;
 		}
+		$session = array('nombre_event' => $nombre_event);
+        $this->session->set_userdata($session);
 		return $html;
 	}
 
@@ -142,6 +157,13 @@ class Inicio extends CI_Controller {
 				}else {
 				    $boton = 'Reservar cupo';
 				    $color_text = ''; 
+				    if(trim($datos[$count2]->event_name) == trim(_getSesion('nombre_event'))) {
+			   			$dato = 'disabled';
+						$color = '#E0E0E0';
+			   		}else {
+			   			$dato = '';
+						$color = '';
+			   		}
 				}
 	            $html .= '<div class="mdl-card mdl-card-fecha cards3" id="card2'.$count2.'" style="background: '.$color.'">
 	            		<div class="fecha"><i class="mdi mdi-date_range"></i><label>01 Febrero</label></div>

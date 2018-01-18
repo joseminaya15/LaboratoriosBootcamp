@@ -35,6 +35,7 @@ function validateEmail(email) {
 
 var cont = 0;
 function inscribir(num, pant, dato) {
+	var suma = '';
 	var evento = $(dato).parent().parent().find('.mdl-card__supporting-text').find('p').text();
 	var i = $('#vacantes'+num).find('label').text();
 	//console.log(evento);
@@ -64,6 +65,9 @@ function inscribir(num, pant, dato) {
 				if('btnInscr'+num == boton) {
 					$('#'+boton).text('Reservado');
 					$('#'+boton).css("color", "#000000");
+					suma = num+10;
+					$('#card'+suma).css( "background", "#E0E0E0" );
+					$('#btnInscr'+suma).prop( "disabled", true );
 				}else {
 					$('#'+boton).text('Reservar cupo');
 				}
