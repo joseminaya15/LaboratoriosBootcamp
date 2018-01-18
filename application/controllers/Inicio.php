@@ -47,7 +47,7 @@ class Inicio extends CI_Controller {
 		$count = 0;
 		foreach ($datos as $key) {
 		       $html .= '<div class="mdl-card mdl-card-fecha cards1" id="card'.$count.'" style="background: '.$color.'">
-		       				<div class="fecha"><i class="mdi mdi-date_range"></i><label>28 Enero</label></div>
+		       				<div class="fecha"><i class="mdi mdi-date_range"></i><label>30 Enero</label></div>
 		                    <div class="mdl-card__supporting-text">
 		                    	<div class="nombre-evento">
 		                        	<p>'.$datos[$count]->event_name.'</p>
@@ -55,7 +55,7 @@ class Inicio extends CI_Controller {
 		                        <span id="vacantes'.$count.'"><i class="mdi mdi-keyboard_arrow_right"></i><i class="mdi mdi-keyboard_arrow_right second"></i><label>'.$datos[$count]->vacantes.'</label> cupos</span> 
 		                    </div>
 		                    <div class="mdl-card__actions text-right boton">
-		                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="btnInscr'.$count.'" onclick="inscribir('.$count.', 1, this);" '.$dato.'>Inscribir</button>
+		                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="btnInscr'.$count.'" onclick="inscribir('.$count.', 1, this);" '.$dato.'>Reservar cupo</button>
 		                    </div>
 		                </div>';
 		    $count++;
@@ -79,7 +79,7 @@ class Inicio extends CI_Controller {
 		$count1 = 0;
 		foreach ($datos as $key) {
 	            $html .= '<div class="mdl-card mdl-card-fecha cards2" id="card1'.$count1.'" style="background: '.$color.'">
-	            		<div class="fecha"><i class="mdi mdi-date_range"></i><label>29 Enero</label></div>
+	            		<div class="fecha"><i class="mdi mdi-date_range"></i><label>31 Enero</label></div>
 	                    <div class="mdl-card__supporting-text">
 	                    	<div class="nombre-evento">
 	                        	<p>'.$datos[$count1]->event_name.'</p>
@@ -87,7 +87,7 @@ class Inicio extends CI_Controller {
 	                    	<span id="vacantes1'.$count1.'"><i class="mdi mdi-keyboard_arrow_right"></i><i class="mdi mdi-keyboard_arrow_right second"></i><label>'.$datos[$count1]->vacantes.'</label> cupos</span>
 	                    </div>
 	                    <div class="mdl-card__actions text-right boton">
-	                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="btnInscr1'.$count1.'" onclick="inscribir(1'.$count1.', 2, this);" '.$dato.'>Inscribir</button>
+	                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="btnInscr1'.$count1.'" onclick="inscribir(1'.$count1.', 2, this);" '.$dato.'>Reservar cupo</button>
 	                    </div>
 	                </div>';
 		    $count1++;
@@ -113,7 +113,7 @@ class Inicio extends CI_Controller {
 		$count2 = 0;
 		foreach ($datos as $key) {
 	            $html .= '<div class="mdl-card mdl-card-fecha cards3" id="card2'.$count2.'" style="background: '.$color.'">
-	            		<div class="fecha"><i class="mdi mdi-date_range"></i><label>30 Enero</label></div>
+	            		<div class="fecha"><i class="mdi mdi-date_range"></i><label>01 Febrero</label></div>
 	                    <div class="mdl-card__supporting-text">
 	                    	<div class="nombre-evento">
 	                    		<p>'.$datos[$count2]->event_name.'</p>
@@ -121,7 +121,7 @@ class Inicio extends CI_Controller {
 	                    	<span id="vacantes2'.$count2.'"><i class="mdi mdi-keyboard_arrow_right"></i><i class="mdi mdi-keyboard_arrow_right second"></i><label>'.$datos[$count2]->vacantes.'</label> cupos</span>
 	                    </div>
 	                    <div class="mdl-card__actions text-right boton">
-	                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="btnInscr2'.$count2.'" onclick="inscribir(2'.$count2.', 3, this);" '.$dato.'>Inscribir</button>
+	                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="btnInscr2'.$count2.'" onclick="inscribir(2'.$count2.', 3, this);" '.$dato.'>Reservar cupo</button>
 	                    </div>
 	                </div>';
 		    $count2++;
