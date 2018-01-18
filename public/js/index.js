@@ -34,6 +34,7 @@ function validateEmail(email) {
 }
 
 var cont = 0;
+var datos_array = [];
 function inscribir(num, pant, dato) {
 	var suma = '';
 	var evento = $(dato).parent().parent().find('.mdl-card__supporting-text').find('p').text();
@@ -66,8 +67,12 @@ function inscribir(num, pant, dato) {
 					$('#'+boton).text('Reservado');
 					$('#'+boton).css("color", "#000000");
 					suma = num+10;
+					datos_array.push(num);
 					$('#card'+suma).css( "background", "#E0E0E0" );
 					$('#btnInscr'+suma).prop( "disabled", true );
+					if(datos_array.length == 3) {
+						$('#ModalThank').modal('show');
+					}
 				}else {
 					$('#'+boton).text('Reservar cupo');
 				}
