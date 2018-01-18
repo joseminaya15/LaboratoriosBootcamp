@@ -10,13 +10,13 @@ function ingresar() {
 	}
 	$.ajax({
 		data  : { correo : correo},
-		url   : 'Login/ingresar',
+		url   : 'login/ingresar',
 		type  : 'POST'
 	}).done(function(data){
 		try{
         	data = JSON.parse(data);
         	if(data.error == 0){
-        		location.href = 'Inicio';
+        		location.href = 'inicio';
         		$('#correo').val("");
         	}else {
         		$('#correo').css('border-color','red');
@@ -51,7 +51,7 @@ function inscribir(num, pant, dato) {
 		data  : { vacantes : i,
 				  evento : evento,
 				  pant   : pant},
-		url   : 'Inicio/inscribir',
+		url   : 'inicio/inscribir',
 		type  : 'POST'
 	}).done(function(data){
 		try{

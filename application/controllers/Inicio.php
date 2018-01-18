@@ -23,7 +23,6 @@ class Inicio extends CI_Controller {
 		$html_datos 	 = $this->htmlDatos();
 		$data['nombres'] = _getSesion('Nombres');
 		$data['apellidos'] = _getSesion('Apellidos');
-		$data['fecha']   = $datos[0]->fecha;
 		$html_datos1     = $this->htmlDatos1();
 	    $data['html1']   = $html_datos1;
 		$data['html']    = $html_datos;
