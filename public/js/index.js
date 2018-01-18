@@ -63,6 +63,7 @@ function inscribir(num, pant, dato) {
 				var boton = $(this).find('.mdl-card__actions').find('button').attr('id');
 				if('btnInscr'+num == boton) {
 					$('#'+boton).text('Reservado');
+					$('#'+boton).css("color", "#000000");
 				}else {
 					$('#'+boton).text('Reservar cupo');
 				}

@@ -35,6 +35,7 @@ class Inicio extends CI_Controller {
 		$color = '';
 		$dato = '';
 		$id_inscrt = '';
+		$color_text = ''; 
 		$boton = 'Reservar cupo';
 		$datos = $this->M_eventos->getDatosEventos();
 		foreach ($datos as $key) {
@@ -51,8 +52,10 @@ class Inicio extends CI_Controller {
 		foreach ($datos as $key) {
 			   if($datos[$count]->Id == $id_inscrt) {
 			   		$boton = 'Reservado';
+			   		$color_text = '#000'; 
 			   }else {
 			   		$boton = 'Reservar cupo';
+			   		$color_text = ''; 
 			   }
 		       $html .= '<div class="mdl-card mdl-card-fecha cards1" id="card'.$count.'" style="background: '.$color.'">
 		       				<div class="fecha"><i class="mdi mdi-date_range"></i><label>30 Enero</label></div>
@@ -63,7 +66,7 @@ class Inicio extends CI_Controller {
 		                        <span id="vacantes'.$count.'"><i class="mdi mdi-keyboard_arrow_right"></i><i class="mdi mdi-keyboard_arrow_right second"></i><label>'.$datos[$count]->vacantes.'</label> cupos</span> 
 		                    </div>
 		                    <div class="mdl-card__actions boton">
-		                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="btnInscr'.$count.'" onclick="inscribir('.$count.', 1, this);" '.$dato.'>'.$boton.'</button>
+		                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="color: '.$color_text.'" id="btnInscr'.$count.'" onclick="inscribir('.$count.', 1, this);" '.$dato.'>'.$boton.'</button>
 		                    </div>
 		                </div>';
 		    $count++;
@@ -75,6 +78,7 @@ class Inicio extends CI_Controller {
 		$color = '';
 		$dato = '';
 		$id_inscrt = '';
+		$color_text = ''; 
 		$boton = 'Reservar cupo';
 		$datos = $this->M_eventos->getDatosEventos2();
 		foreach ($datos as $key) {
@@ -91,8 +95,10 @@ class Inicio extends CI_Controller {
 		foreach ($datos as $key) {
 				if($datos[$count1]->Id == $id_inscrt) {
 			   		$boton = 'Reservado';
+			   		$color_text = '#000'; 
 				}else {
 				    $boton = 'Reservar cupo';
+				    $color_text = ''; 
 				}
 	            $html .= '<div class="mdl-card mdl-card-fecha cards2" id="card1'.$count1.'" style="background: '.$color.'">
 	            		<div class="fecha"><i class="mdi mdi-date_range"></i><label>31 Enero</label></div>
@@ -103,7 +109,7 @@ class Inicio extends CI_Controller {
 	                    	<span id="vacantes1'.$count1.'"><i class="mdi mdi-keyboard_arrow_right"></i><i class="mdi mdi-keyboard_arrow_right second"></i><label>'.$datos[$count1]->vacantes.'</label> cupos</span>
 	                    </div>
 	                    <div class="mdl-card__actions boton">
-	                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="btnInscr1'.$count1.'" onclick="inscribir(1'.$count1.', 2, this);" '.$dato.'>'.$boton.'</button>
+	                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="color: '.$color_text.'" id="btnInscr1'.$count1.'" onclick="inscribir(1'.$count1.', 2, this);" '.$dato.'>'.$boton.'</button>
 	                    </div>
 	                </div>';
 		    $count1++;
@@ -115,6 +121,7 @@ class Inicio extends CI_Controller {
 		$color = '';
 		$dato = '';
 		$id_inscrt = '';
+		$color_text = ''; 
 		$boton = 'Reservar cupo';
 		$datos = $this->M_eventos->getDatosEventos3();
 		foreach ($datos as $key) {
@@ -131,8 +138,10 @@ class Inicio extends CI_Controller {
 		foreach ($datos as $key) {
 				if($datos[$count2]->Id == $id_inscrt) {
 			   		$boton = 'Reservado';
+			   		$color_text = '#000'; 
 				}else {
 				    $boton = 'Reservar cupo';
+				    $color_text = ''; 
 				}
 	            $html .= '<div class="mdl-card mdl-card-fecha cards3" id="card2'.$count2.'" style="background: '.$color.'">
 	            		<div class="fecha"><i class="mdi mdi-date_range"></i><label>01 Febrero</label></div>
@@ -143,7 +152,7 @@ class Inicio extends CI_Controller {
 	                    	<span id="vacantes2'.$count2.'"><i class="mdi mdi-keyboard_arrow_right"></i><i class="mdi mdi-keyboard_arrow_right second"></i><label>'.$datos[$count2]->vacantes.'</label> cupos</span>
 	                    </div>
 	                    <div class="mdl-card__actions boton">
-	                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id="btnInscr2'.$count2.'" onclick="inscribir(2'.$count2.', 3, this);" '.$dato.'>'.$boton.'</button>
+	                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="color: '.$color_text.'" id="btnInscr2'.$count2.'" onclick="inscribir(2'.$count2.', 3, this);" '.$dato.'>'.$boton.'</button>
 	                    </div>
 	                </div>';
 		    $count2++;
