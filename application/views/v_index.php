@@ -19,27 +19,43 @@
     <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>material-icons.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>roboto.css?v=<?php echo time();?>">
 	<link rel="stylesheet"    href="<?php echo RUTA_CSS?>m-p.min.css?v=<?php echo time();?>">
-	<link rel="stylesheet"    href="<?php echo RUTA_CSS?>index.min.css?v=<?php echo time();?>">
+	<link rel="stylesheet"    href="<?php echo RUTA_CSS?>index.css?v=<?php echo time();?>">
 </head>
 <body>
     <section id="principal">
         <div class="fondo-imagen"></div>
         <div class="container text-left relative">
             <div class="logo-home">
-                <img src="<?php echo RUTA_IMG?>logo/logo-blanco.png"">
+                <img src="<?php echo RUTA_IMG?>logo/logo-blanco.png">
             </div>
             <div class="nombres">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect close-login" onclick="gotoLogin()">Logout</button>
                 <p>Welcome</p>
                 <h2><?php echo $nombres.' '.$apellidos ?></h2>
             </div>
             <div class="mdl-calendario">
-            	<?php echo $html ?>
+                <div class="mdl-card mdl-card-fecha mdl-date">
+                    <div class="fecha"><label>30 Jan</label></div>
+                </div>
+                <div class="mdl-card-seats">
+                    <?php echo $html ?>
+                </div>
             </div>  
             <div class="mdl-calendario">
-                <?php echo $html1 ?>
+                <div class="mdl-card mdl-card-fecha mdl-date">
+                    <div class="fecha"><label>31 Jan</label></div>
+                </div>
+                <div class="mdl-card-seats">
+                    <?php echo $html1 ?>
+                </div>
             </div>
             <div class="mdl-calendario">
-                <?php echo $html2 ?>
+                <div class="mdl-card mdl-card-fecha mdl-date">
+                    <div class="fecha"><label>01 Feb</label></div>
+                </div>
+                <div class="mdl-card-seats">
+                    <?php echo $html2 ?>
+                </div>
             </div>  
         </div>
     </section>

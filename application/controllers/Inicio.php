@@ -60,7 +60,6 @@ class Inicio extends CI_Controller {
 			   		$color_text = ''; 
 			   }
 		       $html .= '<div class="mdl-card mdl-card-fecha cards1" id="card'.$count.'" style="background: '.$color.'">
-		       				<div class="fecha"><i class="mdi mdi-date_range"></i><label>30 Enero</label></div>
 		                    <div class="mdl-card__supporting-text">
 		                    	<div class="nombre-evento">
 		                        	<p>'.$datos[$count]->event_name.'</p>
@@ -111,7 +110,6 @@ class Inicio extends CI_Controller {
 			   		}
 				}
 	            $html .= '<div class="mdl-card mdl-card-fecha cards2" id="card1'.$count1.'" style="background: '.$color.'">
-	            		<div class="fecha"><i class="mdi mdi-date_range"></i><label>31 Enero</label></div>
 	                    <div class="mdl-card__supporting-text">
 	                    	<div class="nombre-evento">
 	                        	<p>'.$datos[$count1]->event_name.'</p>
@@ -161,7 +159,6 @@ class Inicio extends CI_Controller {
 			   		}
 				}
 	            $html .= '<div class="mdl-card mdl-card-fecha cards3" id="card2'.$count2.'" style="background: '.$color.'">
-	            		<div class="fecha"><i class="mdi mdi-date_range"></i><label>01 Febrero</label></div>
 	                    <div class="mdl-card__supporting-text">
 	                    	<div class="nombre-evento">
 	                    		<p>'.$datos[$count2]->event_name.'</p>
