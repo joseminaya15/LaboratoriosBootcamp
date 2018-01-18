@@ -36,6 +36,7 @@
                     <div class="event">
                         <h2>HPE Latin America Hybrid IT Bootcamp</h2>
                         <p>January 30th to February 1st, 2018</p>
+                        <p>HPE - LABS Reservation page</p>
                     </div>
                     <div class="mdl-input">
                         <div class="mdl-icon">
