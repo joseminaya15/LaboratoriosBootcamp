@@ -1,5 +1,6 @@
 function ingresar() {
 	var correo = $('#correo').val();
+	console.log(correo);
 	if(correo == null) {
 		$('#correo').parent().addClass('is-invalid');
 		return;
@@ -19,7 +20,7 @@ function ingresar() {
         		location.href = 'inicio';
         		$('#correo').val("");
         	}else {
-        		$('#correo').css('border-color','red');
+				$('#correo').parent().addClass('is-invalid');
         		return;
         	}
       } catch (err){
@@ -124,4 +125,5 @@ function redirectPage(){
 }
 
 function gotoLogin(){
-	location.href = 'Login'; 
+	location.href = 'Login';
+} 
