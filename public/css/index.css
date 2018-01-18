@@ -6,6 +6,16 @@ body{
 .logo{
 	max-width: 200px;
 }
+.close-login:HOVER,
+.close-login{
+	background-color: #000000;
+    color: #FFFFFF;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    height: 30px;
+    text-transform: inherit;
+    line-height: 24px;
+}
 .fondo-imagen{
 	background: url(../img/fondo-home.jpg) no-repeat center center;
 	background-size: cover !important;
@@ -151,22 +161,39 @@ p.reservation{
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
     background-color: #FFFFFF;
     border-radius: 10px;
-    height: 100%;
+    height: 120px;
     min-height: 100%;
     padding: 10px 0;
 }
+.mdl-card-fecha.mdl-date{
+    background-color: transparent;
+    box-shadow: none;
+    max-width: 25px;
+    padding: 0;
+    border-radius: 5px;
+    vertical-align: top;
+    width: 100%;
+}
+.mdl-card-seats{
+    display: inline-block;
+    width: 100%;
+    max-width: calc(100% - 35px);
+}
+.mdl-card-fecha.mdl-date .fecha{
+	writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    height: 100%;
+    text-align: center;
+    padding: 0;
+}
 .mdl-card-fecha .fecha{
-    position: absolute;
     background-color: #000000;
     color: #FFFFFF;
-    top: 0;
-    left: 15px;
     padding: 3px 15px;
-    display: none;
     font-size: 13px;
     vertical-align: middle;
-    border-bottom-left-radius: 6px;
-    border-top-right-radius: 6px;
+    transform: rotate(270deg);
+    border-radius: 5px;
 }
 .mdl-card-fecha .fecha i{
     font-size: 18px;
@@ -179,15 +206,15 @@ p.reservation{
 	vertical-align: middle;
 	font-size: 16px;
 }
-.mdl-card-fecha:nth-child(1) .fecha{
-	display: block;
-}
 .mdl-card.mdl-card-fecha.cards2:nth-child(5) .mdl-card__supporting-text .nombre-evento p{
 	font-size: 18px;
 }
-.mdl-card.mdl-card-fecha.cards1:nth-child(3) .mdl-card__supporting-text .nombre-evento,
+.mdl-card.mdl-card-fecha.cards3:nth-child(1) .mdl-card__supporting-text .nombre-evento,
+.mdl-card.mdl-card-fecha.cards2:nth-child(1) .mdl-card__supporting-text .nombre-evento,
+.mdl-card.mdl-card-fecha.cards1:nth-child(1) .mdl-card__supporting-text .nombre-evento,
 .mdl-card.mdl-card-fecha.cards3:nth-child(3) .mdl-card__supporting-text .nombre-evento,
-.mdl-card.mdl-card-fecha.cards2:nth-child(3) .mdl-card__supporting-text .nombre-evento{
+.mdl-card.mdl-card-fecha.cards2:nth-child(3) .mdl-card__supporting-text .nombre-evento,
+.mdl-card.mdl-card-fecha.cards1:nth-child(3) .mdl-card__supporting-text .nombre-evento{
 	max-width: 100px;
 }
 .mdl-card.mdl-card-fecha.cards3:LAST-CHILD .mdl-card__supporting-text .nombre-evento p,
@@ -244,7 +271,7 @@ p.reservation{
 }
 .container.relative{
 	position: relative;
-	max-width: 1045px;
+	max-width: 1080px;
 	-webkit-transition: max-width .4s ease-in-out;
 	-moz-transition: max-width .4s ease-in-out;
 	-ms-transition: max-width .4s ease-in-out;
@@ -339,7 +366,7 @@ p.reservation{
 }
 @media ( max-width: 768px ){
 	.container.relative{
-		max-width: 540px;
+	    max-width: 572px;
 	}
 	.mdl-card-login .mdl-card__supporting-text{
 		float: none;
@@ -366,9 +393,9 @@ p.reservation{
 		box-shadow: none;
 	}
 }
-@media ( max-width: 560px ){
+@media ( max-width: 580px ){
 	.container.relative{
-	    max-width: 370px;
+	    max-width: 405px;
 	}
 	.nombres p{
 		font-size: 32px;
@@ -394,7 +421,7 @@ p.reservation{
 		max-width: 100%;
 	}
 	.container.relative{
-	    max-width: 320px;
+	    max-width: 280px;
 	    text-align: center;
 	}
 	.nombres h2{
@@ -403,5 +430,12 @@ p.reservation{
 	}
 	.logo-home{
 		text-align: center;
+	}
+	.mdl-calendario{
+	    border-bottom: 3px solid #FFFFFF;
+    	padding-bottom: 30px;
+	}
+	.mdl-calendario:LAST-CHILD{
+	    border: none;
 	}
 }

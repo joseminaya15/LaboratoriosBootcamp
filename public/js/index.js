@@ -124,5 +124,4 @@ function redirectPage(){
 }
 
 function gotoLogin(){
-	location.href = 'Login';
-}
+	location.href = 'Login'; 
