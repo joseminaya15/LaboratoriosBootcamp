@@ -108,9 +108,6 @@ class Inicio extends CI_Controller {
 				    if(trim($datos[$count1]->event_name) == trim(_getSesion('nombre_event'))) {
 			   			$dato = 'disabled';
 						$color = '#E0E0E0';
-			   		}else {
-			   			$dato = '';
-						$color = '';
 			   		}
 				}
 	            $html .= '<div class="mdl-card mdl-card-fecha cards2" id="card1'.$count1.'" style="background: '.$color.'">
@@ -158,13 +155,9 @@ class Inicio extends CI_Controller {
 				}else {
 				    $boton = 'Reservar cupo';
 				    $color_text = ''; 
-				    _log(_getSesion('nombre_event'));
 				    if(trim($datos[$count2]->event_name) == trim(_getSesion('nombre_antiguo')) || trim($datos[$count2]->event_name) == trim(_getSesion('nombre_event'))) {
 			   			$dato = 'disabled';
 						$color = '#E0E0E0';
-			   		}else {
-			   			$dato = '';
-						$color = '';
 			   		}
 				}
 	            $html .= '<div class="mdl-card mdl-card-fecha cards3" id="card2'.$count2.'" style="background: '.$color.'">
