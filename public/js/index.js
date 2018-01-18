@@ -78,3 +78,8 @@ function inscribir(num, pant, dato) {
       }
 	});
 }
+function redirectPage(){
+	setTimeout(function(){ 
+		location.href = 'Login';
+	}, 1000);
+}
