@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
+	'hostname' => '104.238.117.150',
+	'username' => 'brainblue',
+	'password' => 'Brain$blue18',
 	'database' => 'laboratoriosbootcamp',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
