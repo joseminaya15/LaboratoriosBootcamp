@@ -1,11 +1,11 @@
 function ingresar() {
 	var correo = $('#correo').val();
 	if(correo == null) {
-		$('#correo').css('border-color','red');
+		$('#correo').parent().addClass('is-invalid');
 		return;
 	}
 	if (!validateEmail(correo)) {
-		$('#correo').css('border-color','red');
+		$('#correo').parent().addClass('is-invalid');
 		return;
 	}
 	$.ajax({

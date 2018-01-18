@@ -120,6 +120,9 @@ body{
 .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label{
 	color: #000000;
 }
+.mdl-textfield--floating-label.is-invalid .mdl-textfield__label{
+	color: #d50000;
+}
 .mdl-textfield__label{
 	font-size: 15px;
 }
