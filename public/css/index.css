@@ -176,6 +176,7 @@ body{
 .mdl-card.mdl-card-fecha.cards2:nth-child(5) .mdl-card__supporting-text .nombre-evento p{
 	font-size: 18px;
 }
+.mdl-card.mdl-card-fecha.cards1:nth-child(3) .mdl-card__supporting-text .nombre-evento,
 .mdl-card.mdl-card-fecha.cards3:nth-child(3) .mdl-card__supporting-text .nombre-evento,
 .mdl-card.mdl-card-fecha.cards2:nth-child(3) .mdl-card__supporting-text .nombre-evento{
 	max-width: 100px;
