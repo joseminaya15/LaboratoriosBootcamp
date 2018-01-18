@@ -68,7 +68,7 @@ function inscribir(num, pant, dato) {
 				$(this).css( "background", "#E0E0E0" );
 				var boton = $(this).find('.mdl-card__actions').find('button').attr('id');
 				if('btnInscr'+num == boton) {
-					$('#'+boton).text('Reservado');
+					$('#'+boton).text('Reserved');
 					$('#'+boton).css("color", "#000000");
 					if(num > 9 && num < 14) {
 						resta3 = num-10;
@@ -105,7 +105,7 @@ function inscribir(num, pant, dato) {
 						$('#ModalThank').modal('show');
 					}
 				}else {
-					$('#'+boton).text('Reservar cupo');
+					$('#'+boton).text('Reserve');
 				}
 				$('#'+boton).prop( "disabled", true );
 				cont = 0;
