@@ -26,7 +26,7 @@
         <div class="fondo-imagen"></div>
         <div class="container text-left relative">
             <div class="logo-home">
-                <img src="<?php echo RUTA_IMG?>logo/logo-blanco.png"">
+                <img src="<?php echo RUTA_IMG?>logo/logo-blanco.png">
             </div>
             <div class="nombres">
                 <p>Welcome</p>

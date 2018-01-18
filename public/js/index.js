@@ -38,6 +38,9 @@ var datos_array = [];
 function inscribir(num, pant, dato) {
 	var suma = '';
 	var suma2 = '';
+	var resta = '';
+	var resta2 = '';
+	var resta3 = '';
 	var evento = $(dato).parent().parent().find('.mdl-card__supporting-text').find('p').text();
 	var i = $('#vacantes'+num).find('label').text();
 	if(cont == 1) {
@@ -66,15 +69,37 @@ function inscribir(num, pant, dato) {
 				if('btnInscr'+num == boton) {
 					$('#'+boton).text('Reservado');
 					$('#'+boton).css("color", "#000000");
-					suma = num+10;
-					suma2 = num+20;
+					if(num > 9 && num < 14) {
+						resta3 = num-10;
+						$('#card'+resta3).css( "background", "#E0E0E0" );
+						$('#btnInscr'+resta3).prop( "disabled", true );
+					}
+					if(num > 19 && num < 24) {
+						resta = num-10;
+						resta2 = num-20;
+						$('#card'+resta).css( "background", "#E0E0E0" );
+						$('#btnInscr'+resta).prop( "disabled", true );
+						$('#card'+resta2).css( "background", "#E0E0E0" );
+						$('#btnInscr'+resta2).prop( "disabled", true );
+					}
+					if(num == 15 || num == 24) {
+						$('#card24').css( "background", "#E0E0E0" );
+						$('#btnInscr24').prop( "disabled", true );
+						$('#card15').css( "background", "#E0E0E0" );
+						$('#btnInscr15').prop( "disabled", true );
+					}
+					if(num == 4 || num == 14) {
+						$('#card'+num).css( "background", "#E0E0E0" );
+						$('#btnInscr'+num).prop( "disabled", true );
+					}else {
+						suma = num+10;
+						suma2 = num+20;
+						$('#card'+suma).css( "background", "#E0E0E0" );
+						$('#btnInscr'+suma).prop( "disabled", true );
+						$('#card'+suma2).css( "background", "#E0E0E0" );
+						$('#btnInscr'+suma2).prop( "disabled", true );
+					}
 					datos_array.push(num);
-					$('#card'+num).css( "background", "#E0E0E0" );
-					$('#btnInscr'+num).prop( "disabled", true );
-					$('#card'+suma).css( "background", "#E0E0E0" );
-					$('#btnInscr'+suma).prop( "disabled", true );
-					$('#card'+suma2).css( "background", "#E0E0E0" );
-					$('#btnInscr'+suma2).prop( "disabled", true );
 					if(datos_array.length == 3) {
 						$('#ModalThank').modal('show');
 					}
@@ -96,4 +121,8 @@ function redirectPage(){
 	setTimeout(function(){ 
 		location.href = 'Login';
 	}, 1000);
+}
+
+function gotoLogin(){
+	location.href = 'Login';
 }
