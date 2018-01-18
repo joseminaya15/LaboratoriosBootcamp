@@ -21,6 +21,11 @@
     <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>roboto.css?v=<?php echo time();?>">
 	<link rel="stylesheet"    href="<?php echo RUTA_CSS?>m-p.min.css?v=<?php echo time();?>">
 	<link rel="stylesheet"    href="<?php echo RUTA_CSS?>index.css?v=<?php echo time();?>">
+    <style>
+        @media ( max-width: 420px ){
+            .fondo-imagen{display: none;}
+        }
+    </style>
 </head>
 <body>
     <section id="principal">
