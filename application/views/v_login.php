@@ -43,8 +43,8 @@
                         </div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input class="mdl-textfield__input" type="text" id="correo" maxlength="50">
-                            <label class="mdl-textfield__label" for="correo">Correo Electr&oacute;nico</label>
-                            <span class="mdl-textfield__error">Correo inv&aacute;lido</span>
+                            <label class="mdl-textfield__label" for="correo">Email</label>
+                            <span class="mdl-textfield__error">Email inv&aacute;lido</span>
                         </div>
                     </div>
                     <div class="m-t-30">
