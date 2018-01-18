@@ -48,7 +48,7 @@
                         </div>
                     </div>
                     <div class="m-t-30">
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="ingresar()">Ingresar</button>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="ingresar()">Login</button>
                     </div>
                 </div>
             </div>
