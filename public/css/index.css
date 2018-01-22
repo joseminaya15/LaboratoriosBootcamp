@@ -261,7 +261,7 @@ p.reservation{
     transition: background-color .3s linear, color .2s linear;
 }
 .mdl-card-fecha .mdl-card__actions button:HOVER{
-	background-color: #01a982;;
+	background-color: #01a982;
 	color: #FFFFFF;
 }
 .mdl-card-fecha .mdl-card__actions button[disabled]:HOVER{
