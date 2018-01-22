@@ -10,7 +10,7 @@ body{
 .close-login{
 	background-color: #000000;
     color: #FFFFFF;
-    border-radius: 20px;
+    border-radius: 5px;
     margin-bottom: 15px;
     height: 30px;
     text-transform: inherit;
@@ -204,7 +204,7 @@ p.reservation{
 .mdl-card-fecha .fecha label{
 	margin: 0;
 	vertical-align: middle;
-	font-size: 16px;
+	font-size: 14px;
 }
 .mdl-card.mdl-card-fecha.cards2:nth-child(5) .mdl-card__supporting-text .nombre-evento p{
 	font-size: 18px;

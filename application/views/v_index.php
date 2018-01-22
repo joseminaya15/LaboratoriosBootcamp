@@ -35,7 +35,7 @@
             </div>
             <div class="mdl-calendario">
                 <div class="mdl-card mdl-card-fecha mdl-date">
-                    <div class="fecha"><label>30 Jan</label></div>
+                    <div class="fecha"><label>TUE, Jan 30th</label></div>
                 </div>
                 <div class="mdl-card-seats">
                     <?php echo $html ?>
@@ -43,7 +43,7 @@
             </div>  
             <div class="mdl-calendario">
                 <div class="mdl-card mdl-card-fecha mdl-date">
-                    <div class="fecha"><label>31 Jan</label></div>
+                    <div class="fecha"><label>WED, Jan 31th</label></div>
                 </div>
                 <div class="mdl-card-seats">
                     <?php echo $html1 ?>
@@ -51,7 +51,7 @@
             </div>
             <div class="mdl-calendario">
                 <div class="mdl-card mdl-card-fecha mdl-date">
-                    <div class="fecha"><label>01 Feb</label></div>
+                    <div class="fecha"><label>THU, Feb 1st</label></div>
                 </div>
                 <div class="mdl-card-seats">
                     <?php echo $html2 ?>
