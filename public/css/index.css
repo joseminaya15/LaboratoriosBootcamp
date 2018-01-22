@@ -217,15 +217,6 @@ p.reservation{
 .mdl-card.mdl-card-fecha.cards1:nth-child(3) .mdl-card__supporting-text .nombre-evento{
 	max-width: 100px;
 }
-.mdl-card.mdl-card-fecha.cards3:LAST-CHILD .mdl-card__supporting-text .nombre-evento p,
-.mdl-card.mdl-card-fecha.cards2:LAST-CHILD .mdl-card__supporting-text .nombre-evento p{
-    font-size: 15px;
-    line-height: 18px;
-}
-.mdl-card.mdl-card-fecha.cards1:LAST-CHILD .mdl-card__supporting-text .nombre-evento p{
-	font-size: 14px;
-    line-height: 18px;
-}
 .mdl-card-fecha .mdl-card__supporting-text{
 	width: 100%;
 	text-align: left;
