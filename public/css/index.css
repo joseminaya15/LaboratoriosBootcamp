@@ -271,7 +271,7 @@ p.reservation{
 }
 .container.relative{
 	position: relative;
-	max-width: 1080px;
+	max-width: 745px;
 	-webkit-transition: max-width .4s ease-in-out;
 	-moz-transition: max-width .4s ease-in-out;
 	-ms-transition: max-width .4s ease-in-out;
