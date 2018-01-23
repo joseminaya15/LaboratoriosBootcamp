@@ -24,7 +24,6 @@ class Inicio extends CI_Controller {
 		$data['nombres'] = _getSesion('Nombres');
 		$data['apellidos'] = _getSesion('Apellidos');
 		$data['fecha']   = $datos[0]->fecha;
-		//$html_datos1     = $this->htmlDatos1();
 	    $data['html1']   = $this->htmlDatos1();
 		$data['html']    = $html_datos;
 		$data['html2']   = $this->htmlDatos2();
@@ -120,105 +119,6 @@ class Inicio extends CI_Controller {
 		}
 		return $html;
 	}
-
-	/*function htmlDatos2() {
-		$color = '';
-		$dato = '';
-		$id_inscrt = '';
-		$color_text = ''; 
-		$boton = 'Reserve';
-		$new_boton = '';
-		$html = null;
-		$count2 = 0;
-		$count_2 = 0;
-		$datos = $this->M_eventos->getDatosEventos3();
-		$existe = $this->M_eventos->verificarInscritos(_getSesion('Id'), _getSesion('id_evento'));
-		if(_getSesion('id_evento') > 11 && count($existe) != 0) {
-			foreach ($datos as $key) {
-				$dato = 'disabled';
-				$color = '#E0E0E0';
-				if($key->Id == $existe[0]->id_evento) {
-					$boton = 'Reserved';
-					$color_text = '#000';
-				}else {
-					$boton = 'Reserve';
-					$color_text = '';
-				}
-				$html .= '<div class="mdl-card mdl-card-fecha cards3" id="card2'.$count2.'" style="background: '.$color.'">
-		                    <div class="mdl-card__supporting-text">
-		                    	<div class="nombre-evento">
-		                    		<p>'.$datos[$count2]->event_name.'</p>
-		                    	</div>
-		                    	<span id="vacantes2'.$count2.'"><i class="mdi mdi-keyboard_arrow_right"></i><i class="mdi mdi-keyboard_arrow_right second"></i><label>'.$datos[$count2]->vacantes.'</label> seats</span>
-		                    </div>
-		                    <div class="mdl-card__actions boton">
-		                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="color: '.$color_text.'" id="btnInscr2'.$count2.'" onclick="inscribir(2'.$count2.', 3, this);" '.$dato.'>'.$boton.'</button>
-		                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button-modificar" disabled onclick="modificar()">Undo</button>
-		                    </div>
-		                </div>';
-		                $count2++;
-			}
-		}else {
-			foreach ($datos as $key2) {
-				if(trim($key2->event_name) == trim(_getSesion('nombre_antiguo')) || trim($key2->event_name) == trim(_getSesion('nombre_event'))) {
-		   			$dato = 'disabled';
-					$color = '#E0E0E0';
-					$color_text = '';
-					$boton = 'Reserve';
-		   		}else {
-		   			$dato = '';
-					$color = '';
-		   		}
-		   		$html .= '<div class="mdl-card mdl-card-fecha cards3" id="card2'.$count_2.'" style="background: '.$color.'">
-		                    <div class="mdl-card__supporting-text">
-		                    	<div class="nombre-evento">
-		                    		<p>'.$key2->event_name.'</p>
-		                    	</div>
-		                    	<span id="vacantes2'.$count_2.'"><i class="mdi mdi-keyboard_arrow_right"></i><i class="mdi mdi-keyboard_arrow_right second"></i><label>'.$datos[$count_2]->vacantes.'</label> seats</span>
-		                    </div>
-		                    <div class="mdl-card__actions boton">
-		                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="color: '.$color_text.'" id="btnInscr2'.$count_2.'" onclick="inscribir(2'.$count_2.', 3, this);" '.$dato.'>'.$boton.'</button>
-		                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button-modificar" disabled onclick="modificar()">Undo</button>
-		                    </div>
-		                </div>';
-		        $count_2++;
-	   		}
-		}
-		return $html;
-	}
-
-	function inscribir() {
-		$data['error'] = EXIT_ERROR;
-        $data['msj']   = null;
-        try {
-        	$vacantes = _post('vacantes');
-        	$evento   = _post('evento');
-        	$pant     = _post('pant');
-        	$select   = _post('select');
-        	
-        	if($pant == 1) {
-        		$id_evento = $this->M_eventos->getDatosIdEventos($evento, '2018-01-30');
-        	}else if($pant == 2) {
-        		$id_evento = $this->M_eventos->getDatosIdEventos($evento, '2018-01-31');
-        	}else if($pant == 3) {
-        		$id_evento = $this->M_eventos->getDatosIdEventos($evento, '2018-02-01');
-        	}
-        	$updt = array('vacantes' => $vacantes);
-        	$updt_datos = $this->M_eventos->updateDatos($updt, $id_evento, 'eventos');
-        	$arrayInsert = array('id_evento' => $id_evento,
-        						 'id_pers'   => _getSesion('Id'),
-        						 'reserva_nro' => $select);
-        	$this->M_eventos->insertarDatos($arrayInsert, 'inscritos');
-
-        	$session = array('id_evento' => $id_evento,
-								 'evento' => $evento);
-          	$this->session->set_userdata($session);
-        	$data['error'] = EXIT_SUCCESS;
-        }catch(Exception $e) {
-           $data['msj'] = $e->getMessage();
-        }
-        echo json_encode($data);
-	}*/
 
 	function htmlDatos2() {
 		$color = '';
