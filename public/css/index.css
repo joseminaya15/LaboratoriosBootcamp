@@ -196,16 +196,14 @@ p.reservation{
 	vertical-align: middle;
 	font-size: 14px;
 }
-.mdl-card.mdl-card-fecha.cards2:nth-child(5) .mdl-card__supporting-text .nombre-evento p{
-	font-size: 18px;
+.mdl-card.mdl-card-fecha.cards2:LAST-CHILD .mdl-card__supporting-text .nombre-evento{
+	max-width: 115px;
 }
-.mdl-card.mdl-card-fecha.cards3:nth-child(1) .mdl-card__supporting-text .nombre-evento,
-.mdl-card.mdl-card-fecha.cards2:nth-child(1) .mdl-card__supporting-text .nombre-evento,
-.mdl-card.mdl-card-fecha.cards1:nth-child(1) .mdl-card__supporting-text .nombre-evento,
-.mdl-card.mdl-card-fecha.cards3:nth-child(3) .mdl-card__supporting-text .nombre-evento,
-.mdl-card.mdl-card-fecha.cards2:nth-child(3) .mdl-card__supporting-text .nombre-evento,
-.mdl-card.mdl-card-fecha.cards1:nth-child(3) .mdl-card__supporting-text .nombre-evento{
-	max-width: 100px;
+.mdl-card.mdl-card-fecha.cards2:LAST-CHILD .mdl-card__supporting-text .nombre-evento p{
+	font-size: 20px;
+}
+.mdl-card.mdl-card-fecha .mdl-card__supporting-text .nombre-evento{
+	max-width: 102px;
 }
 .mdl-card-fecha .mdl-card__supporting-text{
 	width: 100%;
@@ -218,7 +216,7 @@ p.reservation{
     margin: 0;
     color: #000000;
     text-align: left;
-    line-height: 18px;
+    line-height: 20px;
 }
 .mdl-card-fecha .mdl-card__actions{
 	padding: 0 10px;
@@ -376,7 +374,7 @@ p.reservation{
 }
 @media ( max-width: 580px ){
 	.container.relative{
-	    max-width: 405px;
+	    max-width: 368px;
 	}
 	.nombres p{
 		font-size: 32px;
@@ -401,16 +399,15 @@ p.reservation{
 	.mdl-card-login .mdl-card__supporting-text{
 		max-width: 100%;
 	}
-	.container.relative{
-	    max-width: 280px;
-	    text-align: center;
-	}
 	.nombres h2{
 		font-size: 30px;
     	line-height: 28px;
 	}
-	.logo-home{
-		text-align: center;
+}
+@media ( max-width: 360px ){
+	.container.relative{
+	    max-width: 280px;
+	    text-align: center;
 	}
 	.mdl-calendario{
 	    border-bottom: 3px solid #FFFFFF;
@@ -418,5 +415,8 @@ p.reservation{
 	}
 	.mdl-calendario:LAST-CHILD{
 	    border: none;
+	}
+	.logo-home{
+		text-align: center;
 	}
 }
