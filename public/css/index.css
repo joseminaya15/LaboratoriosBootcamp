@@ -194,7 +194,7 @@ p.reservation{
     vertical-align: middle;
     margin-right: 5px;
 }
-.mdl-card-fecha .fecha label{
+.mdl-card-fecha .fecha p{
 	margin: 0;
 	vertical-align: middle;
 	font-size: 14px;
