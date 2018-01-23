@@ -35,7 +35,8 @@ function validateEmail(email) {
 
 var cont = 0;
 var select = 0;
-var datos_array = [];
+//var datos_array = [];
+var respuestas = [];
 function inscribir(num, pant, dato) {
 	var suma = '';
 	var suma2 = '';
@@ -44,6 +45,9 @@ function inscribir(num, pant, dato) {
 	var resta3 = '';
 	var evento = $(dato).parent().parent().find('.mdl-card__supporting-text').find('p').text();
 	var i = $('#vacantes'+num).find('label').text();
+	if(respuestas.length == 3) {
+		return;
+	}
 	if(cont == 1) {
 		return;
 	}
@@ -53,7 +57,61 @@ function inscribir(num, pant, dato) {
 		return;
 	}
 	select++;
+	respuestas.push(evento);
+	//console.log(respuestas);
+
+	var texto = '.mdl-card.mdl-card-fecha.cards'+pant;
+	$(texto).each(function() {
+				$(this).css( "background", "#E0E0E0" );
+				var boton = $(this).find('.mdl-card__actions').find('button').attr('id');
+				if('btnInscr'+num == boton) {
+					$('#'+boton).text('Reserved');
+					$('#'+boton).css("color", "#000000");
+					if(num > 9 && num < 14) {
+						resta3 = num-10;
+						$('#card'+resta3).css( "background", "#E0E0E0" );
+						$('#btnInscr'+resta3).prop( "disabled", true );
+					}
+					if(num > 19 && num < 24) {
+						resta = num-10;
+						resta2 = num-20;
+						$('#card'+resta).css( "background", "#E0E0E0" );
+						$('#btnInscr'+resta).prop( "disabled", true );
+						$('#card'+resta2).css( "background", "#E0E0E0" );
+						$('#btnInscr'+resta2).prop( "disabled", true );
+					}
+					if(num == 15 || num == 24) {
+						$('#card24').css( "background", "#E0E0E0" );
+						$('#btnInscr24').prop( "disabled", true );
+						$('#card15').css( "background", "#E0E0E0" );
+						$('#btnInscr15').prop( "disabled", true );
+					}
+					if(num == 4 || num == 14) {
+						$('#card'+num).css( "background", "#E0E0E0" );
+						$('#btnInscr'+num).prop( "disabled", true );
+					}else {
+						suma = num+10;
+						suma2 = num+20;
+						$('#card'+suma).css( "background", "#E0E0E0" );
+						$('#btnInscr'+suma).prop( "disabled", true );
+						$('#card'+suma2).css( "background", "#E0E0E0" );
+						$('#btnInscr'+suma2).prop( "disabled", true );
+					}
+					/*datos_array.push(num);
+					if(datos_array.length == 3) {
+						$('#ModalThank').modal('show');
+					}*/
+				}else {
+					$('#'+boton).text('Reserve');
+				}
+				$('#'+boton).prop( "disabled", true );
+				cont = 0;
+			});
+
+
 	$('#vacantes'+num).find('label').text(i);
+	cont = 0;//eliminar
+	return;
 	$.ajax({
 		data  : { vacantes : i,
 				  evento : evento,
@@ -127,5 +185,24 @@ function redirectPage(){
 }
 
 function gotoLogin(){
-	location.href = 'Login';
+	console.log(respuestas);
+	return;
+	$.ajax({
+		data  : { respuestas : respuestas},
+		url   : 'inicio/gotoLogin',
+		type  : 'POST'
+	}).done(function(data){
+		try{
+        	data = JSON.parse(data);
+        	if(data.error == 0){
+        		if(datos_array.length == 3) {
+					$('#ModalThank').modal('show');
+				}
+        	}else {
+        		return;
+        	}
+      } catch (err){
+        msj('error',err.message);
+      }
+	});
 } 
