@@ -29,7 +29,7 @@
                 <img src="<?php echo RUTA_IMG?>logo/logo-blanco.png">
             </div>
             <div class="nombres">
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect close-login" onclick="gotoLogin()">Send/Close</button>
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect close-login" onclick="gotoLogin()">Send and Close</button>
                 <p>Welcome</p>
                 <h2><?php echo $nombres.' '.$apellidos ?></h2>
             </div>
