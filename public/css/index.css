@@ -168,23 +168,14 @@ p.reservation{
 .mdl-card-fecha.mdl-date{
     background-color: transparent;
     box-shadow: none;
-    max-width: 25px;
-    padding: 0;
     border-radius: 5px;
-    vertical-align: top;
+    height: 100%;
     width: 100%;
+    padding: 0;
 }
 .mdl-card-seats{
     display: inline-block;
     width: 100%;
-    max-width: calc(100% - 35px);
-}
-.mdl-card-fecha.mdl-date .fecha{
-	writing-mode: vertical-lr;
-    transform: rotate(180deg);
-    height: 100%;
-    text-align: center;
-    padding: 0;
 }
 .mdl-card-fecha .fecha{
     background-color: #000000;
@@ -192,7 +183,6 @@ p.reservation{
     padding: 3px 15px;
     font-size: 13px;
     vertical-align: middle;
-    transform: rotate(270deg);
     border-radius: 5px;
 }
 .mdl-card-fecha .fecha i{
@@ -262,7 +252,7 @@ p.reservation{
 }
 .container.relative{
 	position: relative;
-	max-width: 745px;
+	max-width: 880px;
 	-webkit-transition: max-width .4s ease-in-out;
 	-moz-transition: max-width .4s ease-in-out;
 	-ms-transition: max-width .4s ease-in-out;
@@ -357,7 +347,7 @@ p.reservation{
 }
 @media ( max-width: 768px ){
 	.container.relative{
-	    max-width: 572px;
+	    max-width: 540px;
 	}
 	.mdl-card-login .mdl-card__supporting-text{
 		float: none;
