@@ -1,6 +1,5 @@
 function ingresar() {
 	var correo = $('#correo').val();
-	console.log(correo);
 	if(correo == null) {
 		$('#correo').parent().addClass('is-invalid');
 		return;
@@ -35,6 +34,7 @@ function validateEmail(email) {
 }
 
 var cont = 0;
+var select = 0;
 var datos_array = [];
 function inscribir(num, pant, dato) {
 	var suma = '';
@@ -52,11 +52,13 @@ function inscribir(num, pant, dato) {
 	if(i < 1) {
 		return;
 	}
+	select++;
 	$('#vacantes'+num).find('label').text(i);
 	$.ajax({
 		data  : { vacantes : i,
 				  evento : evento,
-				  pant   : pant},
+				  pant   : pant,
+				  select : select},
 		url   : 'inicio/inscribir',
 		type  : 'POST'
 	}).done(function(data){
