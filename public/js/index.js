@@ -68,7 +68,7 @@ function inscribir(num, pant, dato) {
 	spl = pant-1;
 	if(pant == 2 && modifi2 == 1) {
 		respuestas.splice(spl, 1, evento);
-		pant2 = 0;
+		pant2 = 1;
 	}else if(pant == 2 && modifi2 == 0){
 		respuestas.push(evento);
 		pant2 = 1;
@@ -78,6 +78,7 @@ function inscribir(num, pant, dato) {
 		pant1 = 1;
 	}else if(pant == 1 && modifi1 == 1) {
 		respuestas.splice(spl, 1, evento);
+		pant1 = 1;
 	}
 	if(pant == 3) {
 		respuestas.push(evento);
@@ -229,6 +230,10 @@ function modificar(nume, panta, datos){
 					var menos = nume-10;
 					$('#card'+menos).css( "background", "#FFFFFF" );
 					$('#btnInscr'+menos).prop( "disabled", false );
+				}else if(pant1 == 1){
+					var menos1 = nume-10;
+					$('#card'+menos1).css( "background", "#E0E0E0" );
+					$('#btnInscr'+menos1).prop( "disabled", true );
 				}
 				/*$('#card'+suma).css( "background", "#FFFFFF" );
 				$('#btnInscr'+suma).prop( "disabled", false );*/
@@ -256,6 +261,10 @@ function modificar(nume, panta, datos){
 					$('#card'+resta3).css( "background", "#FFFFFF" );
 					$('#btnInscr'+resta2).prop( "disabled", false );
 					$('#btnInscr'+resta3).prop( "disabled", false );
+				}else if(pant1 == 1){
+					var resta = nume-10;
+					$('#card'+resta).css( "background", "#E0E0E0" );
+					$('#btnInscr'+resta).prop( "disabled", true );
 				}
 			}
 			$('#'+boton).prop( "disabled", false );
