@@ -48,7 +48,7 @@
                             <i class="mdi mdi-email"></i>
                         </div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" id="correo" maxlength="50">
+                            <input class="mdl-textfield__input" type="text" id="correo" maxlength="50" onkeyup="verificarDatos(event);">
                             <label class="mdl-textfield__label" for="correo">Email</label>
                             <span class="mdl-textfield__error">Invalid email</span>
                         </div>

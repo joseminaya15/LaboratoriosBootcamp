@@ -322,3 +322,10 @@ function modificar(nume, panta, datos){
 		//$('#'+boton).prop( "disabled", false );
 	});
 }
+
+function verificarDatos(e) {
+	if(e.keyCode === 13){
+		e.preventDefault();
+		ingresar();
+    }
+}
