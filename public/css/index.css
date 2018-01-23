@@ -3,6 +3,9 @@ body{
 	padding: 0;
 	font-family: 'RobotoRegular';
 }
+.button-modificar{
+	float: right;
+}
 .logo{
 	max-width: 200px;
 }

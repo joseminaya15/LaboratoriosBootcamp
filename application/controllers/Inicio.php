@@ -68,6 +68,7 @@ class Inicio extends CI_Controller {
 		                    </div>
 		                    <div class="mdl-card__actions boton">
 		                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="color: '.$color_text.'" id="btnInscr'.$count.'" onclick="inscribir('.$count.', 1, this);" '.$dato.'>'.$boton.'</button>
+		                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button-modificar" disabled onclick="modificar()">Undo</button>
 		                    </div>
 		                </div>';
 		    $count++;
@@ -118,6 +119,7 @@ class Inicio extends CI_Controller {
 	                    </div>
 	                    <div class="mdl-card__actions boton">
 	                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="color: '.$color_text.'" id="btnInscr1'.$count1.'" onclick="inscribir(1'.$count1.', 2, this);" '.$dato.'>'.$boton.'</button>
+	                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button-modificar" disabled onclick="modificar()">Undo</button>
 	                    </div>
 	                </div>';
 		    $count1++;
@@ -160,6 +162,7 @@ class Inicio extends CI_Controller {
 		                    </div>
 		                    <div class="mdl-card__actions boton">
 		                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="color: '.$color_text.'" id="btnInscr2'.$count2.'" onclick="inscribir(2'.$count2.', 3, this);" '.$dato.'>'.$boton.'</button>
+		                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button-modificar" disabled onclick="modificar()">Undo</button>
 		                    </div>
 		                </div>';
 		                $count2++;
@@ -184,6 +187,7 @@ class Inicio extends CI_Controller {
 		                    </div>
 		                    <div class="mdl-card__actions boton">
 		                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="color: '.$color_text.'" id="btnInscr2'.$count_2.'" onclick="inscribir(2'.$count_2.', 3, this);" '.$dato.'>'.$boton.'</button>
+		                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button-modificar" disabled onclick="modificar()">Undo</button>
 		                    </div>
 		                </div>';
 		        $count_2++;
