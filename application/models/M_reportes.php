@@ -6,18 +6,17 @@ class M_reportes extends  CI_Model{
     }
 
     function getDatosInscritos() {
-        $sql = 'SELECT e.Nombres,
-                       e.Apellidos,
-                       e.Pais,
+        $sql = "SELECT CONCAT(e.Nombres, ' ', e.Apellidos) AS nombre_completo,
                        e.Email,
-                       eve.event_name,
-                       eve.fecha
-                  FROM emails e,
-                       inscritos i,
-                       eventos eve
-                 WHERE e.Id = i.id_pers
-                   AND i.id_evento = eve.Id
-                ORDER BY eve.fecha';
+                       DATE_FORMAT(ev.fecha,'%d/%m/%Y') AS fecha,
+                       group_concat(ev.event_name ) as evento
+                  FROM laboratoriosbootcamp.inscritos i,
+                       laboratoriosbootcamp.emails e,
+                       laboratoriosbootcamp.eventos ev
+                 WHERE i.id_evento = ev.Id
+                   AND i.id_pers = e.Id
+                GROUP BY e.Id
+                ORDER BY ev.fecha, ev.event_name";
         $result = $this->db->query($sql, array());
         return $result->result();
     }

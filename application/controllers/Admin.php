@@ -20,43 +20,37 @@ class Admin extends CI_Controller {
 	}
 
 	function buscar() {
-		$data['error'] = EXIT_ERROR;
-        $data['msj']   = null;
-        try {
-			$buscador = _post('buscador');
-			if($buscador == null || $buscador == '') {
-				$buscador = null;
-			}
-			$html = '';
-			$datos = $this->M_reportes->getDatosBuscador($buscador);
-			foreach ($datos as $key) {
-			$html .= '<tr>
-                        <td>'.$key->Nombres.' '.$key->Apellidos.'</td>
-                        <td>'.$key->Pais.'</td>
-                        <td>'.$key->Email.'</td>
-                        <td>'.$key->event_name.'</td>
-                        <td>'.$key->fecha.'</td>
-                    </tr>';
-			}
-			$data['html'] = $html;
-			$data['error'] = EXIT_SUCCESS;
-        }catch(Exception $e) {
-           $data['msj'] = $e->getMessage();
-        }
-        echo json_encode($data);
+		$buscador = _post('buscador');
+		if($buscador == null || $buscador == '') {
+			$buscador = null;
+		}
+		$html = '';
+		$datos = $this->M_reportes->getDatosBuscador($buscador);
+		$cont = 1;
+		foreach ($datos as $key) {
+		$html .= '<tr class="tr-cursor-pointer tr-ver-info-solicitud" data-idSolicitud="'.$cont.'">
+                    <td class="text-center">'.$key->Nombres.' '.$key->Apellidos.'</td>
+                    <td class="text-center">'.$key->Email.'</td>
+                    <td class="text-center">'.$key->event_name.'</td>
+                    <td class="text-center">'.$key->fecha.'</td>
+                </tr>';
+            $cont++;
+		}
+		return $html;
 	}
 
 	function getTable() {
 		$datos = $this->M_reportes->getDatosInscritos();
 		$html = '';
+		$cont = 1;
 		foreach ($datos as $key) {
-			$html .= '<tr>
-                        <td>'.$key->Nombres.' '.$key->Apellidos.'</td>
-                        <td>'.$key->Pais.'</td>
-                        <td>'.$key->Email.'</td>
-                        <td>'.$key->event_name.'</td>
-                        <td>'.$key->fecha.'</td>
+			$html .= '<tr class="tr-cursor-pointer tr-ver-info-solicitud" data-idSolicitud="'.$cont.'">
+                        <td class="text-center">'.$key->nombre_completo.'</td>
+                        <td class="text-center">'.$key->Email.'</td>
+                        <td class="text-center">'.$key->evento.'</td>
+                        <td class="text-center">'.$key->fecha.'</td>
                     </tr>';
+                $cont++;
 		}
 		return $html;
 	}
