@@ -52,15 +52,15 @@ function inscribir(num, pant, dato) {
 	var spl = '';
 	var evento = $(dato).parent().parent().find('.mdl-card__supporting-text').find('p').text();
 	i = $('#vacantes'+num).find('label').text();
-	/*if(respuestas.length == 3) {
-		return;
-	}*/
 	if(cont == 1) {
 		return;
 	}
 	cont++;
 	i--;
-	if(i < 1) {
+	if(i < 0) {
+		$('#card'+num).css('background', '#E0E0E0');
+		$('#btnInscr'+num).prop( "disabled", true );
+		cont = 0;
 		return;
 	}
 	select++;
@@ -130,10 +130,6 @@ function inscribir(num, pant, dato) {
 				$('#card'+suma2).css( "background", "#E0E0E0" );
 				$('#btnInscr'+suma2).prop( "disabled", true );
 			}
-			/*datos_array.push(num);
-			if(datos_array.length == 3) {
-				$('#ModalThank').modal('show');
-			}*/
 		}else {
 			$('#'+boton).text('Reserve');
 		}
@@ -235,8 +231,6 @@ function modificar(nume, panta, datos){
 					$('#card'+menos1).css( "background", "#E0E0E0" );
 					$('#btnInscr'+menos1).prop( "disabled", true );
 				}
-				/*$('#card'+suma).css( "background", "#FFFFFF" );
-				$('#btnInscr'+suma).prop( "disabled", false );*/
 			}
 			if(panta == 1) {
 				if(pant2 == 0) {
@@ -310,16 +304,13 @@ function modificar(nume, panta, datos){
 				}
 			}
 			if(panta == 1){
-				console.log('entra menor');
+				//entra menor
 			}
 		}
 		if('btnInscr'+nume == boton) {
 			$('#'+boton).text('Reserve');
 			$('#'+boton).css("color", "");
-		}/*else {
-			$('#'+boton).text('Reserve');
-		}*/
-		//$('#'+boton).prop( "disabled", false );
+		}
 	});
 }
 
